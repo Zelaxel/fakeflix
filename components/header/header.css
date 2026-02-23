@@ -13,7 +13,12 @@
 }
 
 .header-logo {
+    margin-top: 7px;
     height: 2.5rem;
+}
+
+.main-nav {
+    display: flex;
 }
 
 .main-nav ul {
@@ -39,3 +44,11 @@
     opacity: 75%;
 }
 
+.profile-picture-placeholder {
+    display: flex;
+    background-color: #d1d1d1;
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 100%;
+    margin-left: auto;
+}
