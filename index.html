@@ -5,13 +5,14 @@
     <meta charset="UTF-8">
     <title>Fakeflix</title>
     <link rel="stylesheet" href="styles.css">
+    <script src="xlu-include-file.js"></script>
 </head>
 
 <body>
-    <div id="header-placeholder"></div>
-
-    <h1>Hello world!</h1>
-
-    <script src="index.js"></script>
+    <div id="header-placeholder" xlu-include-file="components/header/header.html"></div>
 </body>
 </html>
+
+<script>
+    xLuIncludeFile()
+</script>
