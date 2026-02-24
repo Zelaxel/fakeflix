@@ -51,4 +51,10 @@
     height: 2.5rem;
     border-radius: 100%;
     margin-left: auto;
+    transition: opacity 0.3s ease;
+    cursor:pointer;
+}
+
+.profile-picture-placeholder:hover{
+    opacity: 75%;
 }
