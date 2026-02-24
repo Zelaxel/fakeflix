@@ -1,4 +1,4 @@
-@import "components/header/header.css";
+@import "/components/header/header.css";
 
 * {
     margin: 0;
@@ -8,6 +8,6 @@
 
 body {
     background-color: #2C302E;
-    color: #dfdfdf;
+    color: #ffffff;
     font-family: 'Inter', sans-serif;
 }
