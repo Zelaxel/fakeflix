@@ -25,7 +25,7 @@
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
-    transition: color 0.2s ease-in-out;
+    transition: opacity 0.3s ease;
 
 }
 
@@ -34,5 +34,5 @@
 }
 
 .title-list-item-container:hover .item-text{
-    color: #ffffff;
+    opacity: 75%;
 }
