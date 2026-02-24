@@ -1,4 +1,5 @@
 @import "/components/header/header.css";
+@import "/templates/title-list-item/title-list-item.css";
 
 * {
     margin: 0;
