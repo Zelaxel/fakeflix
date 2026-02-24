@@ -1,4 +1,5 @@
 @import "/components/header/header.css";
+@import "/components/title-list/title-list.css";
 @import "/templates/title-list-item/title-list-item.css";
 
 * {
