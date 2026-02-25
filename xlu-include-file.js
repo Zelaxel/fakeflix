@@ -11,7 +11,7 @@ async function xLuIncludeFile() {
                 if (response.ok) {
                     let content = await response.text();
 
-                    if (file === "/templates/title-list-item/title-list-item.html") {
+                    if (file === "/pages/title-list-item.html") {
                         content = replaceTitleListItemTemplatePlaceholders(content, z[i]);
                     }
 
