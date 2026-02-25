@@ -61,20 +61,3 @@ function replaceArticleTemplatePlaceholders(content, element) {
         .replace(/{{imageCaption}}/g, articleData.imageCaption ?? "{{imageCaption}}");
 
 }
-
-function redirectToArticle(event, element) {
-    event.preventDefault(); // Evita la navegación predeterminada
-
-    // Obtener datos del artículo desde los atributos
-    let params = new URLSearchParams();
-    params.append("title", element.getAttribute("data-title"));
-    params.append("subtitle", element.getAttribute("data-subtitle"));
-    params.append("date", element.getAttribute("data-date"));
-    params.append("displayDate", element.getAttribute("data-display-date"));
-    params.append("content", element.getAttribute("data-content"));
-    params.append("image", element.getAttribute("data-image") || "");
-    params.append("imageCaption", element.getAttribute("data-image-caption") || "");
-
-    // Redirigir a article.html con los parámetros
-    window.location.href = "article.html?" + params.toString();
-}

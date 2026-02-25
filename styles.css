@@ -1,5 +1,3 @@
-@import "/templates/title-list-item/title-list-item.css";
-
 * {
     margin: 0;
     padding: 0;
@@ -74,4 +72,41 @@ body {
 
 .title-list {
     gap: 1rem;
+}
+
+.title-list-item {
+    flex-direction: column;
+    align-items: flex-start;
+    width: 200px;
+    gap: 0.4rem;
+    cursor: pointer;
+}
+
+.item-thumbnail-image {
+    width: 100%;
+    aspect-ratio: 16/9;
+    border-radius: 10px;
+    object-fit: cover;
+    box-sizing: border-box;
+
+    border: 3px solid transparent;
+    transition: border-color 0.2s ease-in-out;
+
+}
+
+.item-text {
+    width: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    transition: opacity 0.3s ease;
+
+}
+
+.title-list-item:hover .item-thumbnail-image{
+    border-color: #009857;
+}
+
+.title-list-item:hover .item-text{
+    opacity: 75%;
 }
