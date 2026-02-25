@@ -71,3 +71,7 @@ body {
 .profile-picture:hover{
     opacity: 75%;
 }
+
+.title-list {
+    gap: 1rem;
+}
