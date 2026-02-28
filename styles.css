@@ -110,6 +110,21 @@ button:hover {
     opacity: 75%;
 }
 
+.right-nav {
+    gap: 1rem;
+}
+
+.right-nav img {
+    filter: invert(1);
+    height: 2.5rem;
+    cursor: pointer;
+    transition: opacity 0.3s ease;
+}
+
+.right-nav img:hover {
+    opacity: 70%;
+}
+
 .profile-picture {
     background-color: #d1d1d1;
     width: 2.5rem;
