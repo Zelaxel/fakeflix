@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Fakeflix</title>
+    <link rel="stylesheet" href="../styles.css">
+    <script src="../xlu-include-file.js"></script>
+</head>
+<body class="details-body">
+    <div class="details-container">
+        <div class="details-header">
+            <button class="back-button" onclick="history.back()">Back</button>
+            <h1 class="details-name">{{title}}</h1>
+        </div>
+        <p id="title-description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus, consectetur debitis delectus distinctio dolore facilis fuga ipsam iste nam non odit perferendis quaerat quam, quasi quia quidem ratione rerum veniam.</p>
+        <div class="title-content">
+            <h2>Seasons</h2>
+            <div class="season-list">
+                <div class="season" xlu-include-file="./title-season.html"></div>
+                <div class="season" xlu-include-file="./title-season.html"></div>
+                <div class="season" xlu-include-file="./title-season.html"></div>
+                <div class="season" xlu-include-file="./title-season.html"></div>
+            </div>
+        </div>
+    </div>
+    <div class="video-container">
+        <video id="video-preview" autoplay muted loop src="../videos/video" poster="../imgs/thumbnail_placeholder.jpg"></video>
+        <button class="play-button">Play</button>
+    </div>
+</body>
+</html>
+
+<script>
+    xLuIncludeFile()
+</script>
