@@ -329,6 +329,7 @@ button:hover {
     background-color: rgba(0, 0, 0, 0.6);
     border-radius: 1rem;
     padding: 1rem;
+    overflow-x: auto;
 }
 
 .reccomended-info p {
