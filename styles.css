@@ -332,7 +332,7 @@ button:hover {
 }
 
 .reccomended-info p {
-    overflow-y: scroll;
+    overflow-y: auto;
 }
 
 .reccomended-title-info h1 {
