@@ -88,6 +88,31 @@ body {
     opacity: 75%;
 }
 
+.search-bar-container {
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    justify-content: flex-end;
+}
+
+#search-icon {
+    position: absolute;
+    padding-right: 10px;
+    filter: brightness(0.8);
+}
+
+#search-bar {
+    background-color: white;
+    width: 450px;
+    height: 40px;
+    border-radius: 25px;
+    text-indent: 25px;
+    font-size: large;
+    outline: none;
+    border: none;
+    box-shadow: none;
+}
+
 .title-list {
     align-items: center;
     justify-content: space-between;
