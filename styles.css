@@ -395,7 +395,7 @@ button:hover {
     gap: 30px;
     width: 100%;
     box-sizing: border-box;
-    position: relative;
+    position: fixed;
 }
 .play {
     border-left: 70px solid white;
