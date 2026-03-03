@@ -1,0 +1,597 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+}
+
+body {
+    background-color: #2C302E;
+    color: #ffffff;
+    font-family: 'Inter', sans-serif;
+}
+
+.container {
+    display: flex;
+    align-items: center;
+
+}
+
+.section {
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+    padding: 0 1rem;
+}
+
+.label {
+    font-size: 1.5rem;
+    padding-top:1rem;
+    padding-left: 3rem;
+    margin: 0;
+}
+
+.main-header {
+    background-color: #474A48;
+    width: 100%;
+    align-items: center;
+    padding: 0.3rem 0.4rem;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+}
+
+.header {
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    margin-top: 7px;
+    height: 2.5rem;
+}
+
+.main-nav ul {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    gap: 1rem;
+}
+
+.main-nav ul li {
+    cursor: pointer;
+}
+
+.main-nav a {
+    font-size: 1rem;
+    transition: opacity 0.3s ease;
+    text-decoration: none;
+    color: #ffffff;
+    font-family: 'Inter', sans-serif;
+    font-weight: bold;
+}
+
+.main-nav a:hover {
+    opacity: 75%;
+}
+
+.profile-picture {
+    background-color: #d1d1d1;
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 100%;
+    margin-left: auto;
+    transition: opacity 0.3s ease;
+    cursor:pointer;
+}
+
+.profile-picture:hover{
+    opacity: 75%;
+}
+
+.search-bar-container {
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    justify-content: flex-end;
+}
+
+#search-icon {
+    position: absolute;
+    padding-right: 10px;
+    filter: brightness(0.8);
+}
+
+#search-bar {
+    background-color: white;
+    width: 450px;
+    height: 40px;
+    border-radius: 25px;
+    text-indent: 25px;
+    font-size: large;
+    outline: none;
+    border: none;
+    box-shadow: none;
+}
+
+#popular-section {
+    flex:1;
+}
+
+.title-list {
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.5rem;
+    width: 100%;
+    height: 100%;
+}
+
+.title-list-items {
+    justify-content: flex-start;
+    gap: 1rem;
+    height: 100%;
+    overflow-x: hidden;
+}
+
+.title-list-item {
+    width: 25rem;
+    height: 100%;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 0.1rem;
+    cursor: pointer;
+}
+
+.item-thumbnail-image {
+    width: 100%;
+    height: 100%;
+    aspect-ratio: 16/9;
+    border-radius: 10px;
+    object-fit: cover;
+    box-sizing: border-box;
+
+    border: 3px solid transparent;
+    transition: border-color 0.2s ease-in-out;
+
+}
+
+.item-text {
+    width: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    transition: opacity 0.3s ease;
+
+}
+
+.title-list-item:hover .item-thumbnail-image{
+    border-color: #009857;
+}
+
+.title-list-item:hover .item-text{
+    opacity: 75%;
+}
+
+.list-button {
+    margin-bottom: 1.5rem;
+    border-radius: 100%;
+    border: 0;
+    width: 2.5rem;
+    height: 2.5rem;
+    flex-shrink: 0;
+    background-color: #ffffff;
+    color:#2C302E;
+    transition: opacity 0.3s ease;
+}
+
+.list-button:hover {
+    opacity: 75%;
+}
+
+.form-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 550px;
+    gap: 20px;
+    padding: 20px;
+    background-color: #474A48;
+    border-radius: 10px;
+}
+
+.form-body{
+    gap: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.form-h1 {
+    font-size: 50px;
+    font-weight: lighter;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+}
+
+.form-field{
+    -webkit-appearance: none;
+    width: 100%;
+    border-radius: 6px;
+    outline: none;
+    border: none;
+    box-shadow: none;
+}
+
+.form-input {
+    height: 40px;
+    padding-left: 30px;
+    background-color: #D9D9D9;
+    color: #2C302E;
+}
+
+.form-submit {
+    height: 60px;
+    width: 160px;
+    background-color: #009857;
+    color: white;
+    font-size: x-large;
+    cursor: pointer;
+}
+
+.form-submit:hover {
+    background-color: color-mix(in srgb, #009857 80%, black 20%);
+    color: color-mix(in srgb, white 70%, black 30%);
+}
+
+.form-message {
+    text-align: center;
+    width: 100%;
+}
+
+.form-link {
+    color: white;
+    font-weight: bolder;
+    text-decoration: none;
+}
+
+button {
+    padding: 0 0.5rem;
+    border: 0px;
+    height: 2rem;
+    border-radius: 0.5rem;
+    color:#2C302E;
+    background-color: #ffffff;
+    cursor: pointer;
+    transition: opacity 0.3s ease;
+
+}
+
+button:hover {
+    opacity: 70%;
+}
+
+.floating-section {
+    display: grid;
+    grid-template-areas: "stack";
+    overflow: hidden;
+    position: relative;
+}
+
+.floating-image {
+    grid-area: stack;
+    width: 100%;
+    object-fit: cover;
+    z-index: 1;
+    position: absolute;
+}
+
+.floating-content {
+    grid-area: stack;
+    z-index: 2;
+}
+
+.right-nav {
+    gap: 1rem;
+}
+
+.right-nav img {
+    filter: invert(1);
+    height: 2.5rem;
+    cursor: pointer;
+    transition: opacity 0.3s ease;
+}
+
+.right-nav img:hover {
+    opacity: 70%;
+}
+
+#homepage {
+    padding: 0;
+}
+
+.recommended {
+    width: 100%;
+    height: 60vh;
+}
+
+.recommended-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap:0.3rem;
+
+    position: absolute;
+    align-self: center;
+    justify-self: flex-start;
+    max-width: 40%;
+    max-height: 80%;
+    margin-left: 5%;
+    background-color: rgba(0, 0, 0, 0.6);
+    border-radius: 1rem;
+    padding: 1rem;
+}
+
+.recommended-info p {
+    overflow-y: auto;
+}
+
+.recommended-title-info h1 {
+    font-size: 5rem;
+}
+
+.recommended-buttons {
+    gap: 0.5rem;
+}
+
+#more-info {
+    background-color: #2C302E;
+    color: #ffffff;
+}
+
+.get-started-form {
+    display: flex;
+    flex-direction: row;
+}
+
+.get-started-form .form-input {
+    flex: 1;
+}
+
+.video_player_footer {
+    background: #000000 ;
+    color: #FFFFFF;
+    text-align: center;
+    padding: 20px;
+}
+
+.controles {
+    display: flex;
+    align-items: center;
+    gap: 200px;
+}
+
+.btn {
+    width: 0;
+    height: 0;
+    cursor: pointer;
+}
+
+.player {
+    background: #000000;
+    padding: 200px 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    width: 100%;
+    box-sizing: border-box;
+    position: relative;
+}
+.play {
+    border-left: 70px solid white;
+    border-top: 45px solid transparent;
+    border-bottom: 45px solid transparent;
+}
+
+.rewind {
+    position: relative;
+    border-right: 42px solid white;
+    border-top: 30px solid transparent;
+    border-bottom: 30px solid transparent;
+}
+
+.rewind::after { content: "";
+    position: absolute;
+    left: -45px; top: -30px;
+    border-right: 42px solid white;
+    border-top: 30px solid transparent;
+    border-bottom: 30px solid transparent;
+}
+
+.forward { position: relative;
+    border-left: 42px solid white;
+    border-top: 30px solid transparent;
+    border-bottom: 30px solid transparent;
+}
+
+.forward::after { content: "";
+    position: absolute;
+    left: 5px; top: -30px;
+    border-left: 42px solid white;
+    border-top: 30px solid transparent;
+    border-bottom: 30px solid transparent;
+}
+
+.fullscreen {
+    font-size: 42px;
+    color: white;
+    line-height: 1;
+    cursor: pointer;
+    user-select: none;
+    position: absolute;
+    left: 10px;
+    top: 10px;
+}
+
+.close {
+    font-size: 42px;
+    color: white;
+    line-height: 1;
+    cursor: pointer;
+    user-select: none;
+    position: absolute;
+    right: 10px;
+    top: 10px;
+}
+
+.titulo {
+    position: absolute;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: white;
+    user-select: none;
+    font-size: 30px;
+}
+
+.video-barra {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    left: 20px;
+    display:flex;
+    align-items:center;
+    gap:15px;
+}
+
+.barra-progreso {
+    flex: 1;
+    height: 2px;
+    background:#2e7d6f;
+    position: relative;
+}
+.details-body {
+    display: flex;
+    flex-direction: row;
+}
+
+.video-container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    background-color: black;
+    align-items: center;
+    justify-content: center;
+}
+
+#video-preview {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+}
+
+.play-button {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.details-container {
+    display: flex;
+    flex-direction: column;
+    width: 350px;
+    padding: 30px;
+    gap: 30px;
+    height: 100%;
+    overflow-y: auto;
+}
+
+.details-header {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+
+#title-description {
+    text-align: justify;
+}
+
+.title-content {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.episode-button {
+    -webkit-appearance: none;
+    width: 200px;
+    height: 40px;
+    border-radius: 6px;
+    outline: none;
+    border: none;
+    box-shadow: none;
+    background-color: #D9D9D9;
+    cursor: pointer;
+}
+
+.season-button {
+    -webkit-appearance: none;
+    font-size: large;
+    text-align: left;
+    border: none;
+    box-shadow: none;
+    padding: 0;
+    cursor: pointer;
+    text-decoration: underline;
+    background-color: transparent;
+    color: white;
+    font-weight: bolder;
+}
+
+.season-list, .season-container, .episode-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.episode-list {
+    padding-bottom: 20px;
+}
+
+.punto-rojo {
+    width: 14px;
+    height: 14px;
+    background: red;
+    border-radius: 50%;
+    position: absolute;
+    left:0;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.tiempo {
+    color: white;
+    font-size: 14px;
+    min-width: 70px;
+    text-align: right;
+    user-select: none;
+}
+
+.title-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
