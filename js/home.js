@@ -1,6 +1,6 @@
-document.addEventListener('DOMContentLoaded', init);
-
-
+document.addEventListener('DOMContentLoaded', async () => {
+    await loadTemplate("header", "header");
+});
 
 class Title {
     constructor(title, image) {
@@ -13,24 +13,8 @@ let popularTitles = [
     new Title("EII: la película", "/imgs/eii.jpg"),
 ];
 
-function init() {
-    loadTemplate("/pages/header.html", "header");
-    loadTemplate("/pages/homepage.html", "main", loadPopularList);
-}
-
-function loadTemplate(file, id, callback) {
-    fetch(file).then(res => {return res.text()})
-        .then(text => {
-            document.getElementById(id).innerHTML = text;
-
-            if(callback) {
-                callback()
-            }
-        })
-}
-
 function loadPopularList() {
-    loadTemplate("/pages/title-list.html", "title-list", putPopularTitles);
+    loadTemplate("/pages/title-list.html", "title-list");
 }
 
 async function putPopularTitles() {
