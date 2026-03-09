@@ -11,7 +11,7 @@ async function xLuIncludeFile() {
                 if (response.ok) {
                     let content = await response.text();
 
-                    if (file === "/pages/title-list-item.html") {
+                    if (file === "/components/title-list-item.html") {
                         content = replaceTitleListItemTemplatePlaceholders(content, z[i]);
                     }
 
@@ -38,26 +38,4 @@ function replaceTitleListItemTemplatePlaceholders(content, element) {
     return content
         .replace(/{{title}}/g, itemData.title ?? "{{title}}")
         .replace(/{{image}}/g, itemData.image ?? "/imgs/thumbnail_placeholder.jpg");
-}
-
-function replaceArticleTemplatePlaceholders(content, element) {
-    let articleData = {
-        title: element.getAttribute("data-title"),
-        subtitle: element.getAttribute("data-subtitle"),
-        date: element.getAttribute("data-date"),
-        displayDate: element.getAttribute("data-display-date"),
-        content: element.getAttribute("data-content"),
-        image: element.getAttribute("data-image"),
-        imageCaption: element.getAttribute("data-image-caption")
-    };
-
-    return content
-        .replace(/{{title}}/g, articleData.title ?? "{{title}}")
-        .replace(/{{subtitle}}/g, articleData.subtitle ?? "{{subtitle}}")
-        .replace(/{{date}}/g, articleData.date ?? "{{date}}")
-        .replace(/{{displayDate}}/g, articleData.displayDate ?? "{{displayDate}}")
-        .replace(/{{content}}/g, articleData.content ?? "{{content}}")
-        .replace(/{{image}}/g, articleData.image ?? "{{image}}")
-        .replace(/{{imageCaption}}/g, articleData.imageCaption ?? "{{imageCaption}}");
-
 }
