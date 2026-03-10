@@ -1,0 +1,13 @@
+{
+    "movies": {
+
+    },
+
+    "users": [
+        {
+            "name": "user1",
+            "picture": "/imgs/thumbnail.placeholder.jpg",
+            "password": "1234"
+        }
+    ]
+}
