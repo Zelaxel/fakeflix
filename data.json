@@ -1,13 +1,25 @@
 {
-    "movies": {
-
-    },
+    "titles": [
+        {
+            "type": "movie",
+            "title": "EII: La película",
+            "image": "/imgs/eii.jpg"
+        }
+    ],
 
     "users": [
         {
             "name": "user1",
             "picture": "/imgs/thumbnail.placeholder.jpg",
             "password": "1234"
+        }
+    ],
+
+    "popular titles": [
+        {
+            "type": "movie",
+            "title": "EII: La película",
+            "image": "/imgs/eii.jpg"
         }
     ]
 }
