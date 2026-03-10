@@ -137,7 +137,6 @@ body {
 }
 
 .title-list-item {
-    width: 25rem;
     height: 100%;
     flex-direction: column;
     align-items: flex-start;
@@ -161,6 +160,7 @@ body {
 
 .item-text {
     width: 100%;
+    text-decoration: none;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
