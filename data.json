@@ -4,6 +4,43 @@
             "type": "movie",
             "title": "EII: La película",
             "image": "/imgs/eii.jpg"
+        },
+
+        {
+            "type": "series",
+            "title": "Katas IS2",
+            "image": "/imgs/thumbnail_placeholder.jpg",
+            "seasons": [
+                {
+                    "index": 1,
+                    "episodes": [
+                        {
+                            "index": 1,
+                            "title": "Kata 1 - Jesús"
+                        },
+
+                        {
+                            "index": 2,
+                            "title": "Kata 2 - Jesús"
+                        }
+                    ]
+                },
+
+                {
+                    "index": 2,
+                    "episodes": [
+                        {
+                            "index": 1,
+                            "title": "Kata 1 - Alejandro"
+                        },
+
+                        {
+                            "index": 2,
+                            "title": "Kata 2 - Alejandro"
+                        }
+                    ]
+                }
+            ]
         }
     ],
 
