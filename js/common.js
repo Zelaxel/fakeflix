@@ -7,3 +7,7 @@ async function loadTemplate(templateName, targetElementId) {
         console.error(`Error loading template ${templateName}:`, error);
     }
 }
+
+function fetchData(category) {
+
+}
