@@ -7,6 +7,12 @@
         },
 
         {
+            "type": "movie",
+            "title": "Clase de PWM",
+            "image": "/imgs/thumbnail_placeholder.jpg"
+        },
+
+        {
             "type": "series",
             "title": "Katas IS2",
             "image": "/imgs/thumbnail_placeholder.jpg",
