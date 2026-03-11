@@ -5,6 +5,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     if (!data) return;
 
     const recommended = data.main;
+    
     const html = document.getElementById("recommended").innerHTML
                             .replace(/{{title}}/g, recommended.title)
                             .replace(/{{description}}/g, recommended.info)
