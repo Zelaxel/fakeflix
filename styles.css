@@ -145,8 +145,10 @@ body {
 
 .title-list-item a {
     height: 100%;
-    text-decoration: none;
+    width: fit-content;
+    display: flex;
     flex-direction: column;
+    text-decoration: none;
     align-items: flex-start;
     justify-content: center;
     gap: 0.1rem;
@@ -154,11 +156,12 @@ body {
 }
 
 .item-thumbnail-image {
-    height: 80%;
+    width: 20vw;
     aspect-ratio: 16/9;
     border-radius: 10px;
     object-fit: cover;
     box-sizing: border-box;
+    display: block;
 
     border: 3px solid transparent;
     transition: border-color 0.2s ease-in-out;
@@ -166,7 +169,7 @@ body {
 }
 
 #item-text {
-    width: 100%;
+    width: 20vw;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -324,8 +327,9 @@ button:hover {
     opacity: 70%;
 }
 
-#homepage {
+#homepage { 
     padding: 0;
+    padding-bottom: 3rem;
 }
 
 .recommended {
