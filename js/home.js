@@ -9,7 +9,6 @@ document.addEventListener('DOMContentLoaded', async () => {
                             .replace(/{{title}}/g, recommended.title)
                             .replace(/{{description}}/g, recommended.info)
                             .replace(/{{image}}/g, recommended.image);
-    console.log(html);
     document.getElementById("recommended").innerHTML = html;
 
     const popular = [...data.popular]
@@ -21,7 +20,6 @@ document.addEventListener('DOMContentLoaded', async () => {
         const item = template
             .replace(/{{title}}/g, title.title)
             .replace(/{{image}}/g, title.image);
-        console.log(item);
         container.insertAdjacentHTML("beforeend", item);
     })
 
