@@ -283,7 +283,6 @@ button {
     background-color: #ffffff;
     cursor: pointer;
     transition: opacity 0.3s ease;
-
 }
 
 button:hover {
@@ -365,6 +364,28 @@ button:hover {
 
 .recommended-buttons {
     gap: 0.5rem;
+}
+
+#watch-now, #more-info {
+    display: flex;
+    align-items: center;
+    padding: 0 0.5rem;
+    border: 0px;
+    height: 2rem;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    text-decoration: none;
+    transition: opacity 0.3s ease;
+
+}
+
+#watch-now:hover, #more-info:hover {
+    opacity: 75%;
+}
+
+#watch-now {
+    background-color: #ffffff;
+    color: #2C302E;
 }
 
 #more-info {
