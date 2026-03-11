@@ -35,6 +35,9 @@ body {
 }
 
 .main-header {
+    position: fixed;
+    top: 0;
+    z-index: 1000;
     background-color: #474A48;
     width: 100%;
     align-items: center;
@@ -115,8 +118,8 @@ body {
     box-shadow: none;
 }
 
-#popular-section {
-    flex:1;
+#popular {
+    height: 30vh;
 }
 
 .title-list {
@@ -138,6 +141,11 @@ body {
 
 .title-list-item {
     height: 100%;
+}
+
+.title-list-item a {
+    height: 100%;
+    text-decoration: none;
     flex-direction: column;
     align-items: flex-start;
     justify-content: center;
@@ -146,8 +154,7 @@ body {
 }
 
 .item-thumbnail-image {
-    width: 100%;
-    height: 100%;
+    height: 80%;
     aspect-ratio: 16/9;
     border-radius: 10px;
     object-fit: cover;
@@ -158,21 +165,20 @@ body {
 
 }
 
-.item-text {
+#item-text {
     width: 100%;
-    text-decoration: none;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
+    color: #ffffff;
     transition: opacity 0.3s ease;
-
 }
 
 .title-list-item:hover .item-thumbnail-image{
     border-color: #009857;
 }
 
-.title-list-item:hover .item-text{
+.title-list-item:hover #item-text{
     opacity: 75%;
 }
 
@@ -286,11 +292,13 @@ button:hover {
     grid-template-areas: "stack";
     overflow: hidden;
     position: relative;
+    height: 100%;
 }
 
 .floating-image {
     grid-area: stack;
     width: 100%;
+    height: 100%;
     object-fit: cover;
     z-index: 1;
     position: absolute;
@@ -322,7 +330,7 @@ button:hover {
 
 .recommended {
     width: 100%;
-    height: 60vh;
+    height: 100vh;
 }
 
 .recommended-info {
