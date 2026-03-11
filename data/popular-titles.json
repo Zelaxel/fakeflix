@@ -1,9 +1,25 @@
 {
+
+    "main": {
+            "type": "movie",
+            "title": "EII: La película",
+            "image": "/imgs/eii.jpg",
+            "info": "Se rumorea que van a arreglar la EII. Yo la verdad es que no me lo creo."
+    },
+
     "popular": [
         {
             "type": "movie",
             "title": "EII: La película",
-            "image": "/imgs/eii.jpg"
+            "image": "/imgs/eii.jpg",
+            "info": "Se rumorea que van a arreglar la EII. Yo la verdad es que no me lo creo."
+        },
+
+        {
+            "type": "movie",
+            "title": "Clase de PWM: Obvio que no voy a ir",
+            "image": "/imgs/cortisol.jpeg",
+            "info": ""
         }
     ]
 }
