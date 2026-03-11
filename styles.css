@@ -331,12 +331,12 @@ button:hover {
     padding-bottom: 3rem;
 }
 
-.recommended {
+#recommended {
     width: 100%;
     height: 100vh;
 }
 
-.recommended-info {
+#recommended-info {
     display: flex;
     flex-direction: column;
     justify-content: center;
