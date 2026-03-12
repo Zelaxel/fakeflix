@@ -41,7 +41,7 @@ body {
     background-color: #474A48;
     width: 100%;
     align-items: center;
-    padding: 0.3rem 0.4rem;
+    padding: 0.3rem 0.5rem;
     box-shadow: 0 4px 10px rgba(0,0,0,0.5);
 }
 
@@ -326,7 +326,7 @@ button:hover {
     opacity: 70%;
 }
 
-#homepage { 
+#homepage {
     padding: 0;
     padding-bottom: 3rem;
 }
@@ -635,17 +635,18 @@ button:hover {
     user-select: none;
 }
 
-#title-grid-container {
-    padding-top: 5rem;
+.header-page {
+    padding-top: 3.5rem;
 }
 
 #title-grid-title {
+    padding-top: 1rem;
     padding-left: 1rem;
 }
 
 #title-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-    gap: 20px;
-    padding: 20px 1rem;
+    grid-template-columns: repeat(auto-fit, minmax(20vw, 20vw));
+    gap: 1rem;
+    padding: 0.2rem 1rem;
 }
