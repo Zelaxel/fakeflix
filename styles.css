@@ -420,34 +420,45 @@ button:hover {
 }
 
 .video_player_footer {
-    background: #000000 ;
-    color: #FFFFFF;
     text-align: center;
     padding: 20px;
+    position: fixed;
+    bottom: 50px;
+    left:0;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+    width: 100%; z-index: 25;
+    justify-content: center;
 }
 
 .controles {
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, -50%);
     display: flex;
+    gap: 5vw;
     align-items: center;
-    gap: 200px;
+    justify-content: center;
+    z-index: 10;
+    top: 50%;
+    display = flex;
+    width: auto;
 }
 
 .btn {
-    width: 0;
-    height: 0;
+    font-size: 90px;
+    color: white;
     cursor: pointer;
+    user-select: none;
+    display: flex;
+    background: none;
 }
 
 .player {
-    background: #000000;
-    padding: 200px 40px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 30px;
-    width: 100%;
-    box-sizing: border-box;
     position: relative;
+    width: 100vw;
+    height: 100vh;
+    background: black;
+    overflow: hidden;
 }
 .play {
     border-left: 70px solid white;
@@ -495,7 +506,7 @@ button:hover {
     top: 10px;
 }
 
-.close {
+.close button {
     font-size: 42px;
     color: white;
     line-height: 1;
@@ -514,6 +525,8 @@ button:hover {
     color: white;
     user-select: none;
     font-size: 30px;
+    z-index: 20;
+    text-align: center;
 }
 
 .video-barra {
@@ -531,6 +544,7 @@ button:hover {
     height: 2px;
     background:#2e7d6f;
     position: relative;
+    padding: 2px 0;
 }
 .details-body {
     display: flex;
@@ -558,6 +572,9 @@ button:hover {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    background: none;
+    font-size: 90px;
+    color: white;
 }
 
 .details-container {
@@ -655,4 +672,62 @@ button:hover {
     grid-template-columns: repeat(auto-fit, 20vw);
     gap: 1rem;
     padding: 0.2rem 1rem;
+}
+
+.audio-menu{
+    position:absolute;
+    bottom:60px;
+    right:20px;
+    background:#111;
+    padding:10px 15px;
+    border-radius:8px;
+    color:white;
+    display:none;
+}
+
+.audio-menu input{
+    width:120px;
+}
+
+.footer-buttons{
+    display:flex;
+    justify-content:center;
+    gap:40px;
+}
+
+.footer-buttons botton {
+
+    cursor:pointer;
+    pointer-events:auto;
+}
+
+.subs-menu{
+    position:absolute;
+    bottom:60px;
+    left:50%;
+    transform:translateX(-50%);
+    background:#111;
+    padding:10px 15px;
+    border-radius:8px;
+    color:white;
+    display:none;
+}
+
+.subs-menu div{
+    cursor:pointer;
+    padding:5px 0;
+}
+
+.subtitulosFalsos{
+    position: absolute;
+    bottom: 100px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: white;
+    font-size: 24px;
+    background: rgba(0,0,0,0.7);
+    padding: 6px 12px;
+    border-radius: 5px;
+    display: none;
+    z-index: 1100;
 }
