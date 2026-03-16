@@ -18,6 +18,16 @@ async function getTemplate(templateName) {
 }
 
 
+async function fetchTitles() {
+    try {
+        const response = await fetch("/data/titles.json");
+        return await response.json();
+    } catch (e) {
+        console.error("Error fetching data: ", e);
+        return null;
+    }
+}
+
 async function fetchPopularTitles() {
     try {
         const response = await fetch("/data/popular-titles.json");

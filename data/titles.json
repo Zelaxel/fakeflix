@@ -9,7 +9,7 @@
 
         {
             "type": "movie",
-            "title": "Clase de PWM: Obvio que no voy a ir",
+            "title": "Clase de teoría de PWM: no voy a ir xdd",
             "image": "/imgs/cortisol.jpeg",
             "info": ""
         },
@@ -17,7 +17,7 @@
         {
             "type": "series",
             "title": "Katas IS2",
-            "image": "/imgs/thumbnail_placeholder.jpg",
+            "image": "/imgs/katas.webp",
             "info": "",
             "seasons": [
                 {

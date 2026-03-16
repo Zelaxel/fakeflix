@@ -8,32 +8,15 @@
     </head>
 
     <body>
-        <header xlu-include-file="/components/header.html"></header>
+        <header id="header"></header>
 
-        <main>
-            <div class="container title-grid">
-                <div xlu-include-file="/components/title-list-item.html" class="container title-list-item"></div>
-                <div xlu-include-file="/components/title-list-item.html" class="container title-list-item"></div>
-                <div xlu-include-file="/components/title-list-item.html" class="container title-list-item"></div>
-                <div xlu-include-file="/components/title-list-item.html" class="container title-list-item"></div>
-                <div xlu-include-file="/components/title-list-item.html" class="container title-list-item"></div>
-                <div xlu-include-file="/components/title-list-item.html" class="container title-list-item"></div>
-                <div xlu-include-file="/components/title-list-item.html" class="container title-list-item"></div>
-                <div xlu-include-file="/components/title-list-item.html" class="container title-list-item"></div>
-                <div xlu-include-file="/components/title-list-item.html" class="container title-list-item"></div>
-                <div xlu-include-file="/components/title-list-item.html" class="container title-list-item"></div>
-                <div xlu-include-file="/components/title-list-item.html" class="container title-list-item"></div>
-                <div xlu-include-file="/components/title-list-item.html" class="container title-list-item"></div>
-                <div xlu-include-file="/components/title-list-item.html" class="container title-list-item"></div>
+        <main class="header-page">
+            <p id="title-grid-title">Showing: <b>{{query}}</b></p>
+            <div id="title-grid">
             </div>
         </main>
+
+        <script src="/js/common.js"></script>
+        <script src="/js/grid.js"></script>
     </body>
 </html>
-
-<script>
-    xLuIncludeFile()
-</script>
-
-
-
-
