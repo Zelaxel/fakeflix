@@ -10,13 +10,13 @@ document.addEventListener('DOMContentLoaded', async () => {
     const container = document.getElementById("title-grid");
     const template = await getTemplate("title-list-item");
     const params = new URLSearchParams(window.location.search);
-    const regex = create_regex(params.get("query"));
     const search_bar = document.getElementById("search-bar");
     const title_grid_query = document.getElementById("title-grid-query");
 
     title_grid_query.textContent = params.get("query");
     search_bar.value = params.get("query");
     search_bar.focus();
+    const regex = new RegExp(normalize_text(params.get("query")), "i")
 
     titles.forEach(title => {
         if (regex.test(title.title)) {
@@ -28,17 +28,6 @@ document.addEventListener('DOMContentLoaded', async () => {
     });
 });
 
-function create_regex(query){
-    const vocal_map = {
-        'a': '[aáàäâ]',
-        'e': '[eéèëê]',
-        'i': '[iíìïî]',
-        'o': '[oóòöô]',
-        'u': '[uúùüû]',
-    };
-    let regex = query.replace(/[aeiou]/gi, (vocal) => {
-        return vocal_map[vocal.toLowerCase()] || vocal;
-    })
-
-    return new RegExp(regex, "gi");
+function normalize_text(text) {
+    return text.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase();
 }
