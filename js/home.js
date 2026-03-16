@@ -53,5 +53,6 @@ document.addEventListener('DOMContentLoaded', async () => {
         btnRight.disabled = scrollLeft >= maxScroll - 1;
     }
 
+    updateButtons()
     container.addEventListener("scroll", updateButtons);
 });
