@@ -1,6 +1,8 @@
 document.addEventListener('DOMContentLoaded', async () => {
     await loadTemplate("header", "header");
 
+    initialize_search();
+
     const data = await fetchPopularTitles();
     if (!data) return;
 
