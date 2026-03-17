@@ -215,6 +215,12 @@ body {
     opacity: 75%;
 }
 
+.list-button:disabled {
+    opacity: 0.3;
+    cursor: not-allowed;
+    pointer-events: none;
+}
+
 .form-container {
     display: flex;
     flex-direction: column;
@@ -662,7 +668,7 @@ button:hover {
     padding-top: 3.5rem;
 }
 
-#title-grid-title {
+#title-grid-message-query {
     padding-top: 1rem;
     padding-left: 1rem;
 }

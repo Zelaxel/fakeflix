@@ -3,7 +3,7 @@ function initialize_search(){
     search_bar.addEventListener("keydown", (e) => {
         const query = search_bar.value;
         if (e.key === "Enter" && query !== "") {
-            document.location.href="/fakeflix/pages/title-grid.html";
+            document.location.href="/fakeflix/pages/title-grid.html" + `?query=${query}`;
         }
     })
 }
