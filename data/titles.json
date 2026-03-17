@@ -1,6 +1,7 @@
 {
     "titles":[
         {
+            "id": 1,
             "type": "movie",
             "title": "EII: La película",
             "image": "/imgs/eii.jpg",
@@ -8,6 +9,7 @@
         },
 
         {
+            "id": 2,
             "type": "movie",
             "title": "Clase de teoría de PWM: no voy a ir xdd",
             "image": "/imgs/cortisol.jpeg",
@@ -15,6 +17,7 @@
         },
 
         {
+            "id": 3,
             "type": "series",
             "title": "Katas IS2",
             "image": "/imgs/katas.webp",
@@ -50,6 +53,46 @@
                     ]
                 }
             ]
+        },
+
+        {
+            "id": 4,
+            "type": "movie",
+            "title": "Antón Pichón liga mogollón",
+            "image": "/imgs/valiant.webp",
+            "info": "Antón Pichón es un ligón. No hay paloma que se resista a su atención. Haz click aquí para saber cómo."
+        },
+
+        {
+            "id": 5,
+            "type": "movie",
+            "title": "Clase de teoría de PWM: no voy a ir xdd",
+            "image": "/imgs/cortisol.jpeg",
+            "info": ""
+        },
+
+        {
+            "id": 6,
+            "type": "movie",
+            "title": "Bee Movie",
+            "image": "/imgs/bee.webp",
+            "info": ""
+        },
+
+        {
+            "id": 7,
+            "type": "movie",
+            "title": "Shrek: antología",
+            "image": "/imgs/shrek.jpg",
+            "info": ""
+        },
+
+        {
+            "id": 8,
+            "type": "movie",
+            "title": "EII: La película",
+            "image": "/imgs/eii.jpg",
+            "info": "Se rumorea que van a arreglar la EII. Yo la verdad es que no me lo creo."
         }
     ]
 }

@@ -3,19 +3,19 @@ document.addEventListener('DOMContentLoaded', async () => {
 
     initialize_search();
 
-    const data = await fetchPopularTitles();
-    if (!data) return;
+    const popularData = await fetchPopularTitles()
+    if (!popularData) return;
+    const titlesData = await fetchTitles();
+    if (!titlesData) return;
 
-    const recommended = data.main;
-    
-    const html = document.getElementById("recommended").innerHTML
-                            .replace(/{{title}}/g, recommended.title)
-                            .replace(/{{description}}/g, recommended.info)
-                            .replace(/{{image}}/g, recommended.image);
-    document.getElementById("recommended").innerHTML = html;
+    const recommended = getRecommendedTitle(popularData.recommended, [...titlesData.titles]);
+    const popular = getPopularTitles([...popularData.popular], [...titlesData.titles]);
 
-    const popular = [...data.popular];
-    
+    document.getElementById("recommended").innerHTML = document.getElementById("recommended").innerHTML
+        .replace(/{{title}}/g, recommended.title)
+        .replace(/{{description}}/g, recommended.info)
+        .replace(/{{image}}/g, recommended.image);
+
     const container = document.getElementById("title-list-items");
     const template = await getTemplate("title-list-item");
 
@@ -56,3 +56,15 @@ document.addEventListener('DOMContentLoaded', async () => {
     updateButtons()
     container.addEventListener("scroll", updateButtons);
 });
+
+function getRecommendedTitle(recommended, titles) {
+    return titles.find(title => title.id === recommended.id);
+}
+
+function getPopularTitles(popularIds, titles) {
+    console.log(popularIds);
+    return popularIds
+        .map(popular => popular.id)
+        .map(id => titles.find(title => title.id === id))
+        .filter(title => title !== undefined);
+}
