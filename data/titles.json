@@ -85,14 +85,6 @@
             "title": "Shrek: antología",
             "image": "/imgs/shrek.jpg",
             "info": ""
-        },
-
-        {
-            "id": 8,
-            "type": "movie",
-            "title": "EII: La película",
-            "image": "/imgs/eii.jpg",
-            "info": "Se rumorea que van a arreglar la EII. Yo la verdad es que no me lo creo."
         }
     ]
 }
