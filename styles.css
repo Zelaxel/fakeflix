@@ -701,7 +701,7 @@ button:hover {
     gap:40px;
 }
 
-.footer-buttons botton {
+.footer-buttons {
 
     cursor:pointer;
     pointer-events:auto;
@@ -737,3 +737,5 @@ button:hover {
     display: none;
     z-index: 1100;
 }
+
+
