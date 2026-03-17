@@ -16,10 +16,10 @@ document.addEventListener('DOMContentLoaded', async () => {
     title_grid_query.textContent = params.get("query");
     search_bar.value = params.get("query");
     search_bar.focus();
-    const regex = new RegExp(normalize_text(params.get("query")), "i")
+    const regex = new RegExp(normalize_text(params.get("query")))
 
     titles.forEach(title => {
-        if (regex.test(title.title)) {
+        if (regex.test(normalize_text(title.title))) {
             const item = template
                 .replace(/{{title}}/g, title.title)
                 .replace(/{{image}}/g, title.image);
