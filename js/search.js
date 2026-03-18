@@ -15,6 +15,6 @@ function initialize_search(){
 
 function search_query(query){
     if (query !== "") {
-        document.location.href="/fakeflix/pages/title-grid.html" + `?query=${query}`;
+        document.location.href="./title-grid.html" + `?query=${query}`;
     }
 }

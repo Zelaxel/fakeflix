@@ -14,7 +14,8 @@ document.addEventListener('DOMContentLoaded', async () => {
     document.getElementById("recommended").innerHTML = document.getElementById("recommended").innerHTML
         .replace(/{{title}}/g, recommended.title)
         .replace(/{{description}}/g, recommended.info)
-        .replace(/{{image}}/g, recommended.image);
+        .replace(/{{image}}/g, recommended.image)
+        .replace(/{{id}}/g, recommended.id);
 
     const container = document.getElementById("title-list-items");
     const template = await getTemplate("title-list-item");
@@ -22,7 +23,8 @@ document.addEventListener('DOMContentLoaded', async () => {
     popular.forEach(title => {
         const item = template
             .replace(/{{title}}/g, title.title)
-            .replace(/{{image}}/g, title.image);
+            .replace(/{{image}}/g, title.image)
+            .replace(/{{id}}/g, title.id);
         container.insertAdjacentHTML("beforeend", item);
     });
 

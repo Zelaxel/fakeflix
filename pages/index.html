@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8">
         <title>Fakeflix</title>
-        <link rel="stylesheet" href="styles.css">
+        <link rel="stylesheet" href="../styles.css">
     </head>
 
     <body>
@@ -16,7 +16,7 @@
                         <p>{{description}}</p>
                         <div class="container recommended-buttons">
                             <a id="watch-now">Watch now</a>
-                            <a id="more-info" href="/pages/title-details.html">More info</a>
+                            <a id="more-info" href="/pages/title-details.html?id={{id}}">More info</a>
                         </div>
                     </div>
                     <img src="{{image}}" class="floating-image">
@@ -34,8 +34,8 @@
                 </section>
         </main>
 
-        <script src="/js/search.js"></script>
-        <script src="/js/common.js"></script>
-        <script src="/js/home.js"></script>
+        <script src="../js/search.js"></script>
+        <script src="../js/common.js"></script>
+        <script src="../js/home.js"></script>
     </body>
 </html>
