@@ -22,7 +22,8 @@ document.addEventListener('DOMContentLoaded', async () => {
         if (regex.test(title.title)) {
             const item = template
                 .replace(/{{title}}/g, title.title)
-                .replace(/{{image}}/g, title.image);
+                .replace(/{{image}}/g, title.image)
+                .replace(/{{id}}/g, title.id);
             container.insertAdjacentHTML("beforeend", item);
         }
     });
