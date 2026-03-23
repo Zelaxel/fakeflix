@@ -1,4 +1,4 @@
-function initialize_search(){
+function initialize_search_bar(){
     const search_bar = document.getElementById("search-bar");
     const search_icon = document.getElementById("search-icon");
     search_bar.addEventListener("keydown", (e) => {
