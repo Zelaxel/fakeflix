@@ -5,7 +5,9 @@
             "type": "movie",
             "title": "Antón Pichón liga mogollón",
             "image": "/imgs/valiant.webp",
-            "info": "Antón Pichón es un ligón. No hay paloma que se resista a su atención. Haz click aquí para saber cómo."
+            "info": "Antón Pichón es un ligón. No hay paloma que se resista a su atención. Haz click aquí para saber cómo.",
+            "tags": ["Love", "Action"],
+            "recentlyAdded": true
         },
 
         {
@@ -13,7 +15,9 @@
             "type": "movie",
             "title": "Clase de teoría de PWM: no voy a ir xdd",
             "image": "/imgs/cortisol.jpeg",
-            "info": "El profe se parece al malo de Alvin y las Ardillas xd"
+            "info": "El profe se parece al malo de Alvin y las Ardillas xd",
+            "tags": ["Horror", "Psychological horror"],
+            "recentlyAdded": false
         },
 
         {
@@ -22,6 +26,8 @@
             "title": "Katas IS2",
             "image": "/imgs/katas.webp",
             "info": "",
+            "tags": ["Comedy", "Educative"],
+            "recentlyAdded": true,
             "seasons": [
                 {
                     "index": 1,
@@ -60,7 +66,9 @@
             "type": "movie",
             "title": "Bee Movie",
             "image": "/imgs/bee.webp",
-            "info": ""
+            "info": "",
+            "tags": ["Animals"],
+            "recentlyAdded": true
         },
 
         {
@@ -68,7 +76,9 @@
             "type": "movie",
             "title": "Shrek: antología",
             "image": "/imgs/shrek.jpg",
-            "info": ""
+            "info": "",
+            "tags": ["Drama, Love"],
+            "recentlyAdded": false
         },
 
         {
@@ -76,7 +86,9 @@
             "type": "movie",
             "title": "EII: La película",
             "image": "/imgs/eii.jpg",
-            "info": "Se rumorea que van a arreglar la EII. Yo la verdad es que no me lo creo."
+            "info": "Se rumorea que van a arreglar la EII. Yo la verdad es que no me lo creo.",
+            "tags": ["Documentary, Informative"],
+            "recentlyAdded": false
         }
     ]
 }

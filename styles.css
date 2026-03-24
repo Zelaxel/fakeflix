@@ -55,18 +55,18 @@ body {
     height: 2.5rem;
 }
 
-.main-nav ul {
+#main-nav ul {
     display: flex;
     align-items: center;
     list-style: none;
     gap: 1rem;
 }
 
-.main-nav ul li {
+#main-nav ul li {
     cursor: pointer;
 }
 
-.main-nav a {
+#main-nav a {
     font-size: 1rem;
     transition: opacity 0.3s ease;
     text-decoration: none;
@@ -75,7 +75,7 @@ body {
     font-weight: bold;
 }
 
-.main-nav a:hover {
+#main-nav a:hover {
     opacity: 75%;
 }
 
