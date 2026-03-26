@@ -11,11 +11,15 @@ document.addEventListener('DOMContentLoaded', async () => {
     const recommended = getRecommendedTitle(popularData.recommended, [...titlesData.titles]);
     const popular = getPopularTitles([...popularData.popular], [...titlesData.titles]);
 
-    document.getElementById("recommended").innerHTML = document.getElementById("recommended").innerHTML
+    const recommendedSection = document.getElementById("recommended")
+    recommendedSection.innerHTML = recommendedSection.innerHTML
         .replace(/{{title}}/g, recommended.title)
         .replace(/{{description}}/g, recommended.info)
         .replace(/{{image}}/g, recommended.image)
-        .replace(/{{id}}/g, recommended.id);
+        .replace(/{{id}}/g, recommended.id)
+        .replace(/{{video}}/g, recommended.type === "series"
+            ? recommended.seasons[0].episodes[0].video
+            : recommended.video);
 
     const container = document.getElementById("title-list-items");
     const template = await getTemplate("title-list-item");

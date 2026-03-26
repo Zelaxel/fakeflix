@@ -6,6 +6,7 @@
             "title": "Antón Pichón liga mogollón",
             "image": "/imgs/valiant.webp",
             "info": "Antón Pichón es un ligón. No hay paloma que se resista a su atención. Haz click aquí para saber cómo.",
+            "video": "",
             "tags": ["Love", "Action"],
             "recentlyAdded": true
         },
@@ -16,6 +17,7 @@
             "title": "Clase de teoría de PWM: no voy a ir xdd",
             "image": "/imgs/cortisol.jpeg",
             "info": "El profe se parece al malo de Alvin y las Ardillas xd",
+            "video": "",
             "tags": ["Horror", "Psychological horror"],
             "recentlyAdded": false
         },
@@ -34,12 +36,14 @@
                     "episodes": [
                         {
                             "index": 1,
-                            "title": "Kata 1 - Jesús"
+                            "title": "Kata 1 - Jesús",
+                            "video": "kata1.mp4"
                         },
 
                         {
                             "index": 2,
-                            "title": "Kata 2 - Jesús"
+                            "title": "Kata 2 - Jesús",
+                            "video": "kata2.mp4"
                         }
                     ]
                 },
@@ -49,12 +53,14 @@
                     "episodes": [
                         {
                             "index": 1,
-                            "title": "Kata 1 - Alejandro"
+                            "title": "Kata 1 - Alejandro",
+                            "video": ""
                         },
 
                         {
                             "index": 2,
-                            "title": "Kata 2 - Alejandro"
+                            "title": "Kata 2 - Alejandro",
+                            "video": ""
                         }
                     ]
                 }
@@ -66,7 +72,8 @@
             "type": "movie",
             "title": "Bee Movie",
             "image": "/imgs/bee.webp",
-            "info": "",
+            "info": "Patrimonio de la humanidad.",
+            "video": "",
             "tags": ["Animals"],
             "recentlyAdded": true
         },
@@ -76,7 +83,8 @@
             "type": "movie",
             "title": "Shrek: antología",
             "image": "/imgs/shrek.jpg",
-            "info": "",
+            "info": "Antología poética",
+            "video": "",
             "tags": ["Drama, Love"],
             "recentlyAdded": false
         },
@@ -87,6 +95,7 @@
             "title": "EII: La película",
             "image": "/imgs/eii.jpg",
             "info": "Se rumorea que van a arreglar la EII. Yo la verdad es que no me lo creo.",
+            "video": "video.mp4",
             "tags": ["Documentary, Informative"],
             "recentlyAdded": false
         }
