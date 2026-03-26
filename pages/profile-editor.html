@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Edit profile</title>
+    <link rel="stylesheet" href="../styles.css">
+</head>
+
+<body class="edit-body form-body">
+    <h1 class="form-h1">Edit profile</h1>
+    <div class="form-container">
+        <form>
+            <input id="form-image" type="file" name="image" accept="image/*">
+            <label for="form-image">
+                <img id="profile-picture-edit" class="container profile-picture" src="/imgs/user_picture.jpg" alt="Error">
+            </label>
+            <input class="form-input form-field" type="text" name="user-name" value="{{user name}}" required>
+            <input class="form-submit form-field" type="submit" value="Confirm changes">
+            <button id="cancel-edit-button" class="cancel-button" onclick="history.back()">Cancel</button>
+        </form>
+    </div>
+</body>
+</html>

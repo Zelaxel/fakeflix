@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', async () => {
     await loadTemplate("header", "header");
 
-    initializeSearchBar();
+    initializeHeader();
 
     const popularData = await fetchPopularTitles()
     if (!popularData) return;
@@ -64,7 +64,6 @@ function getRecommendedTitle(recommended, titles) {
 }
 
 function getPopularTitles(popularIds, titles) {
-    console.log(popularIds);
     return popularIds
         .map(popular => popular.id)
         .map(id => titles.find(title => title.id === id))

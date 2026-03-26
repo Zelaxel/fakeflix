@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', async () => {
     await loadTemplate("header", "header");
 
-    initializeSearchBar();
+    initializeHeader();
 
     const data = await fetchTitles();
     if (!data) return;

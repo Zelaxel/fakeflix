@@ -8,19 +8,19 @@
                 <li><a href="./title-grid.html?recentlyAdded=true">Recently Added</a></li>
             </ul>
         </nav>
-
         <nav class="container right-nav">
             <div class="search-bar-container">
                 <input id="search-bar" type="text" placeholder="Search...">
                 <img id="search-icon" src="/imgs/search.png">
             </div>
-            <div class="container profile-picture"></div>
-            <div class="user-panel">
-                <label id="user-name-label">{{User Name}}</label>
-                <img alt="Error :(" src="/imgs/user_picture.jpg" class="container profile-picture">
-                <button class="logout-button">Log Out</button>
-                <button class="edit-button">Edit profile</button>
-            </div>
+            <img id="profile-picture-header" class="container profile-picture" src="/imgs/user_picture.jpg" alt="Error">
         </nav>
+        <div id="user-panel">
+            <button id="close-button-user-panel" class="close">Close</button>
+            <label id="user-name-label">{{User Name}}</label>
+            <img id="profile-picture-user-panel" class="container profile-picture" src="/imgs/user_picture.jpg" alt="Error">
+            <button id="logout-button">Log Out</button>
+            <button id="edit-button">Edit profile</button>
+        </div>
     </div>
 </div>
