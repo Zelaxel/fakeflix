@@ -1,5 +1,7 @@
 document.addEventListener("DOMContentLoaded", async () => {
     await loadTemplate("header", "header");
+
+    initializeHeader();
     
     const id = Number(new URLSearchParams(window.location.search).get("id"));
     const data = await fetchTitles();
