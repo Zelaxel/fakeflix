@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../styles.css">
+</head>
+
+<body>
+    <main class="player" id="player">
+        <video id="Video" preload="none">
+            <source src="../videos/{{video}}" type="video/mp4">
+        </video>
+
+        <figure class="subtitulosFalsos" id="subtitulosFalsos">
+            <figcaption>[Subtítulos]</figcaption>
+        </figure>
+
+        <section class="top-buttons">
+            <button class="fullscreen" id="fullscreen">⤡</button>
+            <button class="close" id="close">✖</button>
+        </section>
+
+        <div class="titulo">[Title]</div>
+
+        <nav class="controles">
+            <button class="btn" id="rewind">⏪</button>
+            <button class="play-button" id="play">▶</button>
+            <button class="btn" id="forward">⏩</button>
+        </nav>
+
+
+        <section class="video-barra">
+            <div class="barra-progreso" id="progressContainer">
+                <div class="punto-rojo" id="puntoRojo"></div>
+            </div>
+            <span class="tiempo" id="tiempo">00:00:00</span>
+        </section>
+
+        <footer class="video_player_footer">
+            <div class="footer-buttons">
+                <button id="audioBtn">🔊 Audio</button>
+                <button id="subsBtn">💬 Subtitles</button>
+            </div>
+
+            <div class="audio-menu" id="audioMenu">
+                Volume
+                <input type="range" id="volumeControl" min="0" max="1" step="0.01" value="1">
+            </div>
+
+            <div class="subs-menu" id="subsMenu">
+                <button>Off</button>
+                <button>Español</button>
+            </div>
+        </footer>
+    </main>
+
+    <script src="../js/video-player.js"></script>
+    <script src="../js/common.js"></script>
+</body>
+

@@ -4,36 +4,40 @@
             "id": 1,
             "type": "movie",
             "title": "Antón Pichón liga mogollón",
-            "image": "/imgs/valiant.webp",
-            "info": "Antón Pichón es un ligón. No hay paloma que se resista a su atención. Haz click aquí para saber cómo."
+            "image": "valiant.webp",
+            "info": "Antón Pichón es un ligón. No hay paloma que se resista a su atención. Haz click aquí para saber cómo.",
+            "video": ""
         },
 
         {
             "id": 2,
             "type": "movie",
             "title": "Clase de teoría de PWM: no voy a ir xdd",
-            "image": "/imgs/cortisol.jpeg",
-            "info": "El profe se parece al malo de Alvin y las Ardillas xd"
+            "image": "cortisol.jpeg",
+            "info": "El profe se parece al malo de Alvin y las Ardillas xd",
+            "video": ""
         },
 
         {
             "id": 3,
             "type": "series",
             "title": "Katas IS2",
-            "image": "/imgs/katas.webp",
-            "info": "",
+            "image": "katas.webp",
+            "info": "Katas de IS2 (asignatura basada)",
             "seasons": [
                 {
                     "index": 1,
                     "episodes": [
                         {
                             "index": 1,
-                            "title": "Kata 1 - Jesús"
+                            "title": "Kata 1 - Jesús",
+                            "video": "kata1.mp4"
                         },
 
                         {
                             "index": 2,
-                            "title": "Kata 2 - Jesús"
+                            "title": "Kata 2 - Jesús",
+                            "video": "kata2.mp4"
                         }
                     ]
                 },
@@ -43,12 +47,14 @@
                     "episodes": [
                         {
                             "index": 1,
-                            "title": "Kata 1 - Alejandro"
+                            "title": "Kata 1 - Alejandro",
+                            "video": ""
                         },
 
                         {
                             "index": 2,
-                            "title": "Kata 2 - Alejandro"
+                            "title": "Kata 2 - Alejandro",
+                            "video": ""
                         }
                     ]
                 }
@@ -59,24 +65,27 @@
             "id": 4,
             "type": "movie",
             "title": "Bee Movie",
-            "image": "/imgs/bee.webp",
-            "info": ""
+            "image": "bee.webp",
+            "info": "Patrimonio de la humanidad.",
+            "video": ""
         },
 
         {
             "id": 5,
             "type": "movie",
             "title": "Shrek: antología",
-            "image": "/imgs/shrek.jpg",
-            "info": ""
+            "image": "shrek.jpg",
+            "info": "Antología poética",
+            "video": ""
         },
 
         {
             "id": 6,
             "type": "movie",
             "title": "EII: La película",
-            "image": "/imgs/eii.jpg",
-            "info": "Se rumorea que van a arreglar la EII. Yo la verdad es que no me lo creo."
+            "image": "eii.jpg",
+            "info": "Se rumorea que van a arreglar la EII. Yo la verdad es que no me lo creo.",
+            "video": "video.mp4"
         }
     ]
 }
