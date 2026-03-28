@@ -556,11 +556,13 @@ button:hover {
     align-items: center;
     justify-content: center;
     height: 100%;
+    overflow: hidden;
 }
 
 #video-preview {
     object-fit: cover;
     aspect-ratio: 16/9;
+    width: 100%;
     height: 100%;
 }
 
@@ -577,6 +579,7 @@ button:hover {
 
 #details-page {
     height: 100%;
+    flex-direction: row;
 }
 
 #details-container {
