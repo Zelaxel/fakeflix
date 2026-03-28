@@ -19,8 +19,10 @@ document.addEventListener("DOMContentLoaded", async () => {
 
     const playButton = document.getElementById("play");
     const seasonSection = document.getElementById("seasons");
+    const contentTitle = document.getElementById("content-title");
     if (title.type === "movie") {
-        seasonSection.innerHTML = "";
+        seasonSection.style.display = "none";
+        contentTitle.innerHTML = "";
         videoPreview.innerHTML = videoPreview.innerHTML.replace(/{{video}}/g, title.video)
     } else {
         const seasonTemplate = await getTemplate("season");
@@ -31,23 +33,24 @@ document.addEventListener("DOMContentLoaded", async () => {
             newSeason.innerHTML = seasonTemplate.replace(/{{n}}/g, season.index);
             const epList = newSeason.querySelector("#episode-list");
 
+
             [...season.episodes].forEach(ep => {
                 const newEp = document.createElement("div");
                 newEp.innerHTML = episodeTemplate
                                             .replace(/{{name}}/g, ep.title)
                                             .replace(/{{video}}/g, ep.video);
 
-                
                 newEp.firstElementChild.addEventListener("click", () => {
                     playButton.href = newEp.firstElementChild.getAttribute("href");
+                    contentTitle.innerHTML = ep.title;
                 });
-                
+
                 epList.appendChild(newEp);
             });
-
             seasonSection.appendChild(newSeason.firstElementChild);
         });
 
         playButton.href = playButton.href.replace(/{{video}}/g, title.seasons[0].episodes[0].video);
+        contentTitle.innerHTML = title.seasons[0].episodes[0].title;
     }
 });
