@@ -74,10 +74,14 @@ document.addEventListener("DOMContentLoaded", () => {
     btnRewind.addEventListener("click", () => video.currentTime -= 10);
     btnForward.addEventListener("click", () => video.currentTime += 10);
 
-    btnClose.addEventListener("click", () => {
-        if (video.exitFullscreen) video.exitFullscreen();
-        window.location.href =  "../pages/title-details.html"
+    btnClose.addEventListener("click", async () => {
+        if (document.fullscreenElement) {
+            await document.exitFullscreen();
+        }
+        window.location.href = "../pages/title-details.html";
     });
+
+
 
     btnFullscreen.addEventListener("click", () => {
         if (!document.fullscreenElement) {
