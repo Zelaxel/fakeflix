@@ -60,7 +60,9 @@ document.addEventListener('DOMContentLoaded', async () => {
     }
 
     updateButtons()
+
     container.addEventListener("scroll", updateButtons);
+    window.addEventListener("resize", updateButtons);
 });
 
 function getRecommendedTitle(recommended, titles) {
