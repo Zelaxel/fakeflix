@@ -495,9 +495,10 @@ button:hover {
     position: absolute;
     left: 10px;
     top: 10px;
+    background-color: transparent;
 }
 
-.close button {
+.close  {
     font-size: 42px;
     color: white;
     line-height: 1;
@@ -506,6 +507,7 @@ button:hover {
     position: absolute;
     right: 10px;
     top: 10px;
+    background-color: transparent;
 }
 
 .titulo {
