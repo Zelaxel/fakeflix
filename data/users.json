@@ -3,7 +3,7 @@
         {
             "name": "user1",
             "email": "user1@gmail.com",
-            "picture": "/imgs/thumbnail.placeholder.jpg",
+            "picture": "thumbnail_placeholder.jpg",
             "password": "1234"
         }
     ]

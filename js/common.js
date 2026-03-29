@@ -37,3 +37,13 @@ async function fetchPopularTitles() {
         return null;
     }
 }
+
+async function fetchUserData() {
+    try {
+        const response = await fetch("/data/users.json");
+        return await response.json();
+    } catch (e) {
+        console.error("Error fetching data: ", e);
+        return null;
+    }
+}

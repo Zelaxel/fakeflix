@@ -1,18 +1,29 @@
 function initializeHeader() {
-    initializeUserPanel();
+    initializeUserPanel()
     initializeSearchBar();
 }
 
-function initializeUserPanel() {
-    const profilePicture = document.getElementById("profile-picture-header");
+async function initializeUserPanel() {
+    const profilePictureHeader = document.getElementById("profile-picture-header");
+    const profilePicturePanel = document.getElementById("profile-picture-user-panel");
     const closeButon = document.getElementById("close-button-user-panel");
     const userPanel = document.getElementById("user-panel");
-    const logout_button = document.getElementById("logout-button");
-    const edit_button = document.getElementById("edit-button");
+    const logoutButton = document.getElementById("logout-button");
+    const editButton = document.getElementById("edit-button");
+    const userName = document.getElementById("user-name-label");
 
     userPanel.style.display = "none";
 
-    profilePicture.addEventListener("click", () => {
+    // Obtengo los datos de usuarios.
+    const userData = await fetchUserData();
+    if(!userData) return;
+
+    // Cambio los valores de user panel por los del primer usuario.
+    userName.innerHTML = userData.users[0].name;
+    profilePicturePanel.src = `../imgs/${userData.users[0].picture}`
+    profilePictureHeader.src = `../imgs/${userData.users[0].picture}`
+
+    profilePictureHeader.addEventListener("click", () => {
         userPanel.style.display = "flex";
     })
 
@@ -20,12 +31,12 @@ function initializeUserPanel() {
         userPanel.style.display = "none";
     })
 
-    logout_button.addEventListener("click", () => {
-        document.location.href="./login.html";
+    logoutButton.addEventListener("click", () => {
+        document.location.href = "./login.html";
     })
 
-    edit_button.addEventListener("click", () => {
-        document.location.href="./profile-editor.html";
+    editButton.addEventListener("click", () => {
+        document.location.href = "./profile-editor.html";
     })
 }
 
