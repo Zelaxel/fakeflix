@@ -81,8 +81,6 @@ document.addEventListener("DOMContentLoaded", () => {
         window.history.back();
     });
 
-
-
     btnFullscreen.addEventListener("click", () => {
         if (!document.fullscreenElement) {
             player.requestFullscreen();
