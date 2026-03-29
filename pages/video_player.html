@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="../styles.css">
+    <title>Reproductor de video</title>
 </head>
 
 <body>
@@ -16,20 +17,23 @@
         </figure>
 
         <section class="top-buttons">
+            <h2 hidden>Controles superiores</h2>
             <button class="fullscreen" id="fullscreen">⤡</button>
             <button class="close" id="close">✖</button>
         </section>
 
-        <div class="titulo">[Title]</div>
+        <h1 class="titulo">[Title]</h1>
 
-        <nav class="controles">
+        <section class="controles">
+            <h2 hidden>Controles de reproducción</h2>
             <button class="btn" id="rewind">⏪</button>
             <button class="play-button" id="play">▶</button>
             <button class="btn" id="forward">⏩</button>
-        </nav>
+        </section>
 
 
         <section class="video-barra">
+            <h2 hidden>Barra de progreso</h2>
             <div class="barra-progreso" id="progressContainer">
                 <div class="punto-rojo" id="puntoRojo"></div>
             </div>
@@ -42,15 +46,17 @@
                 <button id="subsBtn">💬 Subtitles</button>
             </div>
 
-            <div class="audio-menu" id="audioMenu">
-                Volume
+            <section class="audio-menu" id="audioMenu">
+                <h2 hidden>Control de volumen</h2>
+                <label for="volumeControl">Volume</label>
                 <input type="range" id="volumeControl" min="0" max="1" step="0.01" value="1">
-            </div>
+            </section>
 
-            <div class="subs-menu" id="subsMenu">
+            <section class="subs-menu" id="subsMenu">
+                <h2 hidden>Opciones de subtítulos</h2>
                 <button>Off</button>
                 <button>Español</button>
-            </div>
+            </section>
         </footer>
     </main>
 
