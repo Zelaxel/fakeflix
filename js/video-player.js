@@ -79,6 +79,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 
     btnClose.addEventListener("click", () => {
         if (video.exitFullscreen) video.exitFullscreen();
+        window.history.back();
     });
 
     btnFullscreen.addEventListener("click", () => {
