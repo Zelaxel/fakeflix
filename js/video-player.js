@@ -1,6 +1,11 @@
-document.addEventListener("DOMContentLoaded", () => {
-
+document.addEventListener("DOMContentLoaded", async () => {
+    const v = new URLSearchParams(window.location.search).get("v");
+    const data = await fetchTitles();
+    if (!data) return;
+    console.log(v);
     const video = document.getElementById("Video");
+    video.innerHTML = video.innerHTML.replace(/{{video}}/g, v);
+
     const btnPlay = document.getElementById("play");
     const btnRewind = document.getElementById("rewind");
     const btnForward = document.getElementById("forward");
@@ -18,7 +23,6 @@ document.addEventListener("DOMContentLoaded", () => {
     const fakeSubtitles = document.getElementById("subtitulosFalsos");
 
     subsBtn.addEventListener("click", () => {
-
         if(fakeSubtitles.style.display === "none" || fakeSubtitles.style.display === ""){
             fakeSubtitles.style.display = "block";
         } else {
@@ -28,7 +32,6 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     audioBtn.addEventListener("click", () => {
-
         if(audioMenu.style.display === "none" || audioMenu.style.display === ""){
             audioMenu.style.display = "block";
         } else {
@@ -74,14 +77,9 @@ document.addEventListener("DOMContentLoaded", () => {
     btnRewind.addEventListener("click", () => video.currentTime -= 10);
     btnForward.addEventListener("click", () => video.currentTime += 10);
 
-    btnClose.addEventListener("click", async () => {
-        if (document.fullscreenElement) {
-            await document.exitFullscreen();
-        }
-        window.history.back();
+    btnClose.addEventListener("click", () => {
+        if (video.exitFullscreen) video.exitFullscreen();
     });
-
-
 
     btnFullscreen.addEventListener("click", () => {
         if (!document.fullscreenElement) {
@@ -108,7 +106,6 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     document.addEventListener("fullscreenchange", () => {
-
         if (document.fullscreenElement) {
             btnFullscreen.textContent = "⤢";
         } else {
