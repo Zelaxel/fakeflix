@@ -10,22 +10,22 @@
         <header id="header"></header>
 
         <main class="container header-page" id="details-page">
-            <article id="details-container">
-                <div class="details-header">
+            <section id="details-container">
+                <header class="details-header">
                     <button class="back-button" onclick="history.back()">Back</button>
                     <h1>{{title}}</h1>
-                </div>
+                </header>
                 <p>{{description}}</p>
                 <section id="seasons">
                     <h2>Seasons</h2>
                     <div class="season-list"></div>
                 </section>
-            </article>
-            <article id="video-container">
-                <h1 id="content-title">{{title}}</h1>
+            </section>
+            <aside id="video-container">
+                <h2 id="content-title">{{title}}</h2>
                 <video id="video-preview" autoplay muted loop src="../videos/{{video}}" poster="../imgs/{{image}}"></video>
                 <a class="play-button" id="play" href="video_player.html?v={{video}}">Play</a>
-            </article>
+            </aside>
         </main>
 
         <script src="../js/common.js"></script>
