@@ -1,9 +1,4 @@
 document.addEventListener('DOMContentLoaded', async () => {
-
-    const session = localStorage.getItem("isLoggedIn");
-
-    if(session !== "true") window.location.href = "./login.html";
-
     await loadTemplate("header", "header");
 
     initializeHeader();
