@@ -17,11 +17,15 @@ async function initializeUserPanel() {
     // Obtengo los datos de usuarios.
     const userData = await fetchUserData();
     if(!userData) return;
+    console.log(userData)
 
-    // Cambio los valores de user panel por los del primer usuario.
-    userName.innerHTML = userData.users[0].name;
-    profilePicturePanel.src = `../imgs/${userData.users[0].picture}`
-    profilePictureHeader.src = `../imgs/${userData.users[0].picture}`
+    const email = localStorage.getItem("email");
+
+    const user = userData.users.find(u => u.email === email);
+
+    userName.innerText = user.name;
+    profilePicturePanel.src = `../imgs/${user.picture}`
+    profilePictureHeader.src = `../imgs/${user.picture}`
 
     profilePictureHeader.addEventListener("click", () => {
         userPanel.style.display = "flex";
@@ -32,6 +36,7 @@ async function initializeUserPanel() {
     })
 
     logoutButton.addEventListener("click", () => {
+        localStorage.setItem("isLoggedIn", "false")
         document.location.href = "./login.html";
     })
 

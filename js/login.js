@@ -30,5 +30,9 @@ form.addEventListener("submit", async (e) => {
     }
 
     alert("Inicio de sesión exitoso");
+
+    localStorage.setItem("isLoggedIn", "true")
+    localStorage.setItem("email", email)
+
     window.location.href = "./index.html";
 });
