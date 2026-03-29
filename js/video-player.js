@@ -2,7 +2,6 @@ document.addEventListener("DOMContentLoaded", async () => {
     const v = new URLSearchParams(window.location.search).get("v");
     const data = await fetchTitles();
     if (!data) return;
-    console.log(v);
     const video = document.getElementById("Video");
     video.innerHTML = video.innerHTML.replace(/{{video}}/g, v);
 
