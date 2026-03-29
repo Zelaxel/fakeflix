@@ -16,7 +16,7 @@
             "type": "movie",
             "title": "Clase de teoría de PWM: no voy a ir xdd",
             "image": "cortisol.jpeg",
-            "info": "El profe se parece al malo de Alvin y las Ardillas xd",
+            "info": "",
             "video": "",
             "tags": ["Horror", "Psychological horror"],
             "recentlyAdded": false
@@ -27,7 +27,7 @@
             "type": "series",
             "title": "Katas IS2",
             "image": "katas.webp",
-            "info": "",
+            "info": "Katas de ingenieria del software 2.",
             "tags": ["Comedy", "Educative"],
             "recentlyAdded": true,
             "seasons": [
