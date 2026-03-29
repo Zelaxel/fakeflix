@@ -3,7 +3,8 @@ document.addEventListener("DOMContentLoaded", async () => {
     const data = await fetchTitles();
     if (!data) return;
     const video = document.getElementById("Video");
-    video.innerHTML = video.innerHTML.replace(/{{video}}/g, v);
+    video.querySelector("source").setAttribute("src", `../videos/${v}`);
+    video.load();
 
     const btnPlay = document.getElementById("play");
     const btnRewind = document.getElementById("rewind");
