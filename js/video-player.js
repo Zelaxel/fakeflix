@@ -78,7 +78,7 @@ document.addEventListener("DOMContentLoaded", () => {
         if (document.fullscreenElement) {
             await document.exitFullscreen();
         }
-        window.location.href = "../pages/title-details.html";
+        window.history.back();
     });
 
 
