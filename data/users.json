@@ -1,0 +1,16 @@
+{
+    "users": [
+        {
+            "name": "user1",
+            "email": "user1@gmail.com",
+            "picture": "thumbnail_placeholder.jpg",
+            "password": "1234"
+        },
+        {
+            "name": "user2",
+            "email": "user2@gmail.com",
+            "picture": "user_picture.jpg",
+            "password": "4321"
+        }
+    ]
+}
