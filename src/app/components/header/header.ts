@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ElementRef, ViewChild } from '@angular/core';
 
 @Component({
   selector: 'app-header',
@@ -6,4 +6,8 @@ import { Component } from '@angular/core';
   templateUrl: './header.html',
   styleUrl: './header.css',
 })
-export class Header {}
+export class Header {
+  @ViewChild('searchIcon') private iconRef!: ElementRef<HTMLElement>;
+  @ViewChild('searchBar') private searchBarRef!: ElementRef<HTMLElement>;
+  
+}
