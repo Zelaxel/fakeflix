@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { TitleItem } from '../title-item/title-item';
-import { Header } from '../header/header';
+import { TitleItem } from '../../components/title-item/title-item';
+import { Header } from '../../components/header/header';
 
 @Component({
   selector: 'app-title-grid',
