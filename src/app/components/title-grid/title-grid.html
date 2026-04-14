@@ -1,0 +1,12 @@
+<app-header></app-header>
+
+<main class="header-page">
+    <p id="title-grid-message-query">Showing: <strong id="title-grid-query">{{query}}</strong></p>
+    <section id="title-grid">
+        @for(id of titlesId; track id) {
+            <div class="title-container">
+                <app-title-item [id] = id></app-title-item>
+            </div>
+        }
+    </section>
+</main>
