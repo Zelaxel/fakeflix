@@ -1,5 +1,5 @@
 import { Component, Input, OnInit, ChangeDetectorRef } from '@angular/core';
-import { GetJsonData } from '../../inyectables/get-json-data';
+import { GetJsonData } from '../../injectables/get-json-data';
 
 @Component({
   selector: 'app-title-item',
