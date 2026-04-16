@@ -37,6 +37,27 @@ a.hoverable {
     opacity: 70%;
 }
 
-.header-page {
-    padding-top: 3.5rem;
+form {
+    display: flex;
+    justify-content: center;
+    gap: 0;
+    padding: 1rem;
+    background-color: #474A48;
+    border-radius: 10px;
+}
+
+.form-field {
+    appearance: none;
+    -webkit-appearance: none;
+    border-radius: 1rem;
+    border: none;
+    outline: none;
+    box-shadow: none;
+}
+
+.form-input {
+    height: 3rem;
+    padding-left: 0.75rem;
+    background-color: #ffffff;
+    color: #2C302E;
 }
