@@ -1,23 +1,36 @@
 article {
-    height: 200px;
     width: 300px;
 }
 
 a {
     display: flex;
     flex-direction: column;
-    height: 170px;
-    width: 100%;
     gap:0;
 }
 
 p {
     margin-top: 0.5rem;
     margin-left: 0.5rem;
+    transition: opacity 0.3s ease;
+
 }
 
 img {
     border-radius: 0.75rem;
-    height: 100%;
-    width: 100%;
+    aspect-ratio: 16/9;
+    object-fit: cover;
+
+    border: 0.2rem solid transparent;
+    transition: border-color 0.2s ease-in-out;
+
+}
+
+a:hover img {
+    border-color: #009857;
+    cursor: pointer;
+}
+
+a:hover p {
+    cursor: pointer;
+    opacity: 70%;
 }
