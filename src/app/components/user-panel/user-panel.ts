@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 
 @Component({
   standalone: true,
@@ -7,4 +7,10 @@ import { Component } from '@angular/core';
   templateUrl: './user-panel.html',
   styleUrl: './user-panel.css',
 })
-export class UserPanel {}
+export class UserPanel {
+  @Output() closePanel = new EventEmitter<void>()
+
+  hideUserPanel(): void {
+    this.closePanel.emit();
+  }
+}

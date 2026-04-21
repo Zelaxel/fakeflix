@@ -1,5 +1,4 @@
 main {
-    background-color: blue;
     position: relative;
     display: flex;
     flex-direction: column;
@@ -12,6 +11,7 @@ main {
     border-color: #009857;
     height: 17rem;
     width: 17rem;
+    background-color: #474a48;
 }
 
 img {
@@ -28,11 +28,18 @@ img {
 
 .logout-button, .edit-button {
     width: 7rem !important;
-    transition: 0.3s;
     background-color: #009857;
     color: white;
 }
 
-.logout-button:active, .edit-button:active {
-    transform: scale(0.8);
+.close {
+    border: none;
+    background-color: none;
+    background: none;
+    padding: 0;
+}
+
+i {
+    color: white;
+    font-size: 2rem;
 }
