@@ -1,3 +1,7 @@
+main {
+    padding-top: 3.5rem;
+}
+
 #label {
     font-size: 1.5rem;
     padding-top:1rem;
@@ -60,11 +64,15 @@ button {
     align-self: center;
     justify-self: flex-start;
     max-width: 40%;
-    max-height: 80%;
+    max-height: 50%;
     margin-left: 5%;
     background-color: rgba(0, 0, 0, 0.6);
     border-radius: 1rem;
     padding: 1rem;
+}
+
+#featured-info p {
+    overflow-y: auto;
 }
 
 #featured-thumbnail {

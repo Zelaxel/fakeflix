@@ -1,10 +1,10 @@
 <nav class="container">
     <section  id="left-nav">
-        <ul class="container" id="nav-bar">
-            <li class="hoverable"><a href="#"><img id="logo" src="imgs/logo.png"></a></li>
-            <li class="hoverable"><a href="#">Series</a></li>
-            <li class="hoverable"><a href="#">Movies</a></li>
-            <li class="hoverable"><a href="#">Recently Added</a></li>
+        <ul class="container hoverable" id="nav-bar">
+            <li class="hoverable"><a routerLink=""><img id="logo" src="imgs/logo.png"></a></li>
+            <li class="hoverable"><a routerLink="list">Series</a></li>
+            <li class="hoverable"><a routerLink="list">Movies</a></li>
+            <li class="hoverable"><a routerLink="list">Recently Added</a></li>
         </ul>
     </section>
     
@@ -13,6 +13,9 @@
                 <input id="search-text" type="text" placeholder="Search..." #searchInput>
                 <i class="bi bi-search hoverable" id="search-icon" #searchIcon></i>
         </article>
-        <img class="hoverable" id="profile-pic" src="imgs/user_picture.jpg">
+        <img (click)="showUserPanel()" id="profile-pic" src="imgs/user_picture.jpg">
     </section>
+    @if(userPanelVisible) {
+        <app-user-panel (closePanel)="hideUserPanel()" id="user.panel"></app-user-panel>
+    }
 </nav>
