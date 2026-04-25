@@ -1,0 +1,56 @@
+<script src="../signin/signin.spec.ts"></script>
+<div class="form-container">
+
+  <form [formGroup]="form" (ngSubmit)="login()" autocomplete="off" novalidate>
+
+
+    <input
+      #emailInput
+      class="form-input form-field"
+      type="email"
+      placeholder="Mail address"
+      formControlName="email"
+      (input)="emailInvalid = false"
+    >
+
+    <div *ngIf="emailInvalid">
+      <p *ngIf="form.get('email')?.errors?.['required']">
+        El email es obligatorio
+      </p>
+      <p *ngIf="form.get('email')?.errors?.['email']">
+        El formato del email no es válido
+      </p>
+    </div>
+
+
+    <input
+      #passwordInput
+      class="form-input form-field"
+      type="password"
+      placeholder="Password"
+      formControlName="password"
+      autocomplete="off"
+      (input)="passwordInvalid = false"
+    >
+
+    <div *ngIf="passwordInvalid">
+      <p *ngIf="form.get('password')?.errors?.['required']">
+        La contraseña es obligatorio
+      </p>
+    </div>
+
+
+    <input
+      class="form-submit form-field"
+      type="submit"
+      value="Log in"
+    >
+
+  </form>
+
+  <p class="form-message">
+    Don't have an account?
+    <a class="form-link" routerLink="/signin" (mousedown)="navegarASignin(emailInput.value)" >Sign in!</a>
+  </p>
+
+</div>
