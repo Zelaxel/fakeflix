@@ -83,7 +83,7 @@ export class Login {
       localStorage.setItem('isLoggedIn', 'true');
       localStorage.setItem('email', email);
 
-      this.router.navigate(['/home']);
+      window.location.href = './index.html';
     });
 
   }

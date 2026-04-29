@@ -72,8 +72,6 @@ export class Signin implements OnInit {
       return;
     }
 
-
-
-
+    window.location.href = './index.html';
   }
 }

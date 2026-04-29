@@ -1,0 +1,90 @@
+<main class="player" #player>
+
+  <!-- VIDEO -->
+  <video
+    #videoPlayer
+    preload="none"
+    (timeupdate)="updateProgress()"
+    (play)="isPlaying = true"
+    (pause)="isPlaying = false"
+  >
+    <source [src]="'assets/videos/' + video" type="video/mp4">
+
+
+  </video>
+
+  <!-- SUBTÍTULOS -->
+  <figure class="subtitulosFalsos" *ngIf="showSubtitles">
+    <figcaption>{{ subtitleText || '[Subtítulos]' }}</figcaption>
+  </figure>
+
+  <!-- BOTONES SUPERIORES -->
+  <section class="top-buttons">
+    <button class="fullscreen" (click)="toggleFullscreen()">
+      <i class="bi" [ngClass]="isFullscreen ? 'bi-arrows-angle-contract' : 'bi-arrows-angle-expand'"></i>
+    </button>
+    <button class="close" (click)="closePlayer()"><i class="bi bi-x-lg"></i></button>
+  </section>
+
+  <!-- TÍTULO -->
+  <h1 class="titulo">{{ title || '[Title]' }}</h1>
+
+  <!-- CONTROLES -->
+  <section class="controles">
+    <button class="btn" (click)="rewind()"><i class="bi bi-rewind-fill"></i></button>
+
+    <button class="btn btn-light" (click)="togglePlay(videoPlayer)">
+      <i class="bi" [ngClass]="isPlaying ? 'bi-pause-fill' : 'bi-play-fill'"></i>
+    </button>
+
+    <button class="btn" (click)="forward()"><i class="bi bi-fast-forward-fill"></i></button>
+  </section>
+
+  <!-- BARRA DE PROGRESO -->
+  <section class="video-barra">
+    <div
+      class="barra-progreso"
+      #progressContainer
+      (click)="seek($event)"
+    >
+      <div
+        class="punto-rojo"
+        [style.left.%]="progress">
+      </div>
+    </div>
+
+    <span class="tiempo">{{ currentTime || '00:00:00' }}</span>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="video_player_footer">
+
+    <div class="footer-buttons">
+      <button (click)="toggleAudioMenu()"><i class="bi bi-volume-up-fill"></i> Audio</button>
+      <button (click)="toggleSubs()"><i class="bi bi-chat-dots-fill"></i> Subtitles</button>
+    </div>
+
+    <!-- AUDIO -->
+    <section class="audio-menu" *ngIf="showAudioMenu">
+      <label>Volume</label>
+      <input
+        type="range"
+        min="0"
+        max="1"
+        step="0.01"
+        [(ngModel)]="volume"
+        (input)="changeVolume(videoPlayer)"
+        (change)="showAudioMenu = false"
+      >
+    </section>
+
+    <!-- SUBTÍTULOS -->
+    <section class="subs-menu" *ngIf="showSubsMenu">
+      <button (click)="disableSubs()">Off</button>
+      <button (click)="enableSubs()">Español</button>
+    </section>
+
+  </footer>
+
+</main>
+

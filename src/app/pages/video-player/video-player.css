@@ -1,0 +1,194 @@
+/* Reset básico (opcional pero recomendable) */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+.player {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  background: black;
+  overflow: hidden;
+}
+
+
+#Video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+
+.subtitulosFalsos {
+  position: absolute;
+  bottom: 100px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: white;
+  font-size: 24px;
+  background: rgba(0,0,0,0.7);
+  padding: 6px 12px;
+  border-radius: 5px;
+  display: none;
+  z-index: 1100;
+}
+
+
+.fullscreen,
+.close {
+  font-size: 42px;
+  color: white;
+  cursor: pointer;
+  position: absolute;
+  top: 10px;
+  background: transparent;
+}
+
+.fullscreen {
+  left: 10px;
+}
+
+.close {
+  right: 10px;
+}
+
+
+.titulo {
+  position: absolute;
+  top: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: white;
+  font-size: 30px;
+  z-index: 20;
+  text-align: center;
+}
+
+
+.controles {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  gap: 5vw;
+  align-items: center;
+  z-index: 10;
+}
+
+.btn {
+  font-size: 90px;
+  color: white;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+
+.play-button {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: none;
+  font-size: 90px;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+
+.video-barra {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  right: 20px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.barra-progreso {
+  flex: 1;
+  height: 2px;
+  background: #2e7d6f;
+  position: relative;
+}
+
+.punto-rojo {
+  width: 14px;
+  height: 14px;
+  background: red;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.tiempo {
+  color: white;
+  font-size: 14px;
+  min-width: 70px;
+  text-align: right;
+}
+
+
+.video_player_footer {
+  position: fixed;
+  bottom: 50px;
+  width: 100%;
+  text-align: center;
+  z-index: 25;
+}
+
+
+.footer-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+}
+
+.footer-buttons button {
+  cursor: pointer;
+}
+
+
+.audio-menu {
+  position: absolute;
+  bottom: 60px;
+  right: 20px;
+  background: #111;
+  padding: 10px 15px;
+  border-radius: 8px;
+  color: white;
+  display: none;
+}
+
+.audio-menu input {
+  width: 120px;
+}
+
+
+.subs-menu {
+  position: absolute;
+  bottom: 60px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #111;
+  padding: 10px 15px;
+  border-radius: 8px;
+  color: white;
+  display: none;
+}
+
+.subs-menu button {
+  display: block;
+  padding: 5px 0;
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+}
