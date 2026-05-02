@@ -3,12 +3,12 @@
   <!-- VIDEO -->
   <video
     #videoPlayer
-    preload="none"
+    preload="auto"
     (timeupdate)="updateProgress()"
     (play)="isPlaying = true"
     (pause)="isPlaying = false"
+    [src]="video"
   >
-    <source [src]="'assets/videos/' + video" type="video/mp4">
 
 
   </video>

@@ -21,5 +21,13 @@ export const routes: Routes = [
   },
   { path: 'login', loadComponent: () => import('./pages/login/login').then((m) => m.Login) },
   { path: 'signin', loadComponent: () => import('./pages/signin/signin').then((m) => m.Signin) },
-  { path: 'video-player', loadComponent: () => import('./pages/video-player/video-player').then((m) => m.VideoPlayer) },
+  {
+    path: 'video-player',
+    loadComponent: () => import('./pages/video-player/video-player').then((m) => m.VideoPlayer),
+  },
+
+  {
+    path: 'title-details',
+    loadComponent: () => import('./pages/title-details/title-details').then((m) => m.TitleDetails),
+  },
 ];

@@ -1,7 +1,7 @@
-import { Component, ElementRef, ViewChild } from '@angular/core';
+import { Component, ElementRef, ViewChild, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-video-player',
@@ -10,7 +10,8 @@ import { Router } from '@angular/router';
   templateUrl: './video-player.html',
   styleUrl: './video-player.css',
 })
-export class VideoPlayer {
+export class VideoPlayer implements OnInit {
+
   /* ========================
      🎬 REFERENCIAS DOM
   ======================== */
@@ -20,7 +21,7 @@ export class VideoPlayer {
   /* ========================
      📦 ESTADO
   ======================== */
-  video: string = 'video.mp4';
+  video: string = '';
   title: string = '[Title]';
 
   isFullscreen = false;
@@ -35,10 +36,51 @@ export class VideoPlayer {
 
   subtitleText = '[Subtítulos]';
 
-  constructor(private router: Router) {}
+  constructor(
+    private router: Router,
+    private route: ActivatedRoute
+  ) {}
 
   /* ========================
-     Funcion de play and pause
+     🚀 INIT: CARGA POR ID
+  ======================== */
+  ngOnInit() {
+    const id = this.route.snapshot.paramMap.get('id');
+
+    if (id) {
+      const data = this.loadVideoById(Number(id));
+
+      if (data) {
+        this.video = data.video;
+        this.title = data.title;
+      }
+    }
+  }
+
+  /* ========================
+     🧪 MOCK (luego será DB/API)
+  ======================== */
+  loadVideoById(id: number) {
+    const fakeDB: any = {
+      1: {
+        video: 'https://media.w3.org/2010/05/sintel/trailer.mp4',
+        title: 'Sintel'
+      },
+      2: {
+        video: 'https://media.w3.org/2010/05/bunny/movie.mp4',
+        title: 'Bunny'
+      },
+      3: {
+        video: 'https://media.w3.org/2010/05/video/movie.mp4',
+        title: 'Video random'
+      }
+    };
+
+    return fakeDB[id];
+  }
+
+  /* ========================
+     ▶️ PLAY / PAUSE
   ======================== */
   togglePlay(videoEl?: HTMLVideoElement) {
     const video = videoEl || this.videoRef.nativeElement;
@@ -53,20 +95,18 @@ export class VideoPlayer {
   }
 
   /* ========================
-     Controles de forward y rewind
+     ⏪⏩ CONTROLES
   ======================== */
   rewind() {
-    const video = this.videoRef.nativeElement;
-    video.currentTime -= 10;
+    this.videoRef.nativeElement.currentTime -= 10;
   }
 
   forward() {
-    const video = this.videoRef.nativeElement;
-    video.currentTime += 10;
+    this.videoRef.nativeElement.currentTime += 10;
   }
 
   /* ========================
-     Logica del volumen
+     🔊 VOLUMEN
   ======================== */
   changeVolume(videoEl?: HTMLVideoElement) {
     const video = videoEl || this.videoRef.nativeElement;
@@ -78,7 +118,7 @@ export class VideoPlayer {
   }
 
   /* ========================
-     logica de los subtitulos
+     💬 SUBTÍTULOS
   ======================== */
   toggleSubs() {
     this.showSubsMenu = !this.showSubsMenu;
@@ -112,20 +152,14 @@ export class VideoPlayer {
     const rect = container.getBoundingClientRect();
     const pos = (event.clientX - rect.left) / rect.width;
 
-    const video = this.videoRef.nativeElement;
-    video.currentTime = pos * video.duration;
+    this.videoRef.nativeElement.currentTime = pos * this.videoRef.nativeElement.duration;
   }
 
   formatTime(time: number): string {
-    const h = Math.floor(time / 3600)
-      .toString()
-      .padStart(2, '0');
-    const m = Math.floor((time % 3600) / 60)
-      .toString()
-      .padStart(2, '0');
-    const s = Math.floor(time % 60)
-      .toString()
-      .padStart(2, '0');
+    const h = Math.floor(time / 3600).toString().padStart(2, '0');
+    const m = Math.floor((time % 3600) / 60).toString().padStart(2, '0');
+    const s = Math.floor(time % 60).toString().padStart(2, '0');
+
     return `${h}:${m}:${s}`;
   }
 
