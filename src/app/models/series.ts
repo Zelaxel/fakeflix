@@ -1,16 +1,16 @@
 import { Title } from "./title"
 
-interface Season {
+export interface SeasonInterface {
     index: number;
     episodes: Episode[];
 }
 
-interface Episode {
+export interface Episode {
     idx: number;
     name: string;
     videoUrl: string;
 }
 
 export interface Series extends Title {
-    seasons: Season[];
+    seasons: SeasonInterface[];
 }

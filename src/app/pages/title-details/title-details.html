@@ -7,14 +7,24 @@
             <h1>{{title?.name}}</h1>
         </section>
         <p>{{title?.description}}</p>
+
+      @if (title?.type === TitleTypes.Series) {
+        @for (item of getSeasons(); track item.index) {
+          <app-season
+            [season]="item"
+            [isOpenByDefault]="$first"
+            (episodeSelected)="setVideoDisplay(item, $event)" )/>
+        }
+      }
     </aside>
 
     <section class="container" id="video-display">
+      <div class="top-shadow"></div>
         <h2>{{videoTitle}}</h2>
         <video
             autoplay muted loop
             src="/videos/{{video}}"
-            poster="imgs/{{thumbnail}}">
+            poster="imgs/{{this.title?.imageUrl}}">
         </video>
             <a class="container hoverable" id="play-button"><i class="bi bi-play-fill"></i></a>
     </section>
