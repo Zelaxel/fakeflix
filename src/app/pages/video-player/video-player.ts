@@ -2,7 +2,7 @@ import { Component, ElementRef, ViewChild, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { Router, ActivatedRoute } from '@angular/router';
-import { FirebaseService } from '../services/firebase/firebase.service';
+import { FirebaseService } from '../../services/firebase/firebase.service';
 
 @Component({
   selector: 'app-video-player',
@@ -39,7 +39,7 @@ export class VideoPlayer implements OnInit {
 
   constructor(
     private router: Router,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
     private firebaseService: FirebaseService,
   ) {}
 
