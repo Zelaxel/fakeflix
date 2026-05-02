@@ -4,16 +4,16 @@
     <aside>
         <section class="container" id="aside-head">
             <button class="hoverable" id="back"><i class="bi bi-arrow-left"></i></button>
-            <h1>{{title}}</h1>
+            <h1>{{title?.name}}</h1>
         </section>
-        <p>{{description}}</p>
+        <p>{{title?.description}}</p>
     </aside>
 
     <section class="container" id="video-display">
         <h2>{{videoTitle}}</h2>
         <video
-            autoplay muted loop 
-            src="/videos/{{video}}" 
+            autoplay muted loop
+            src="/videos/{{video}}"
             poster="imgs/{{thumbnail}}">
         </video>
             <a class="container hoverable" id="play-button"><i class="bi bi-play-fill"></i></a>

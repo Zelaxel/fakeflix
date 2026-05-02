@@ -1,6 +1,6 @@
 <article class="title-list-item">
-    <a>
-        <img class="item-thumbnail-image" [src]="'/imgs/' + titleImage">
-        <p id="item-text">{{titleName}}</p>
+    <a routerLink="/details" [state]="{data: title}">
+        <img class="item-thumbnail-image" [src]="'/imgs/' + img">
+        <p id="item-text">{{name}}</p>
     </a>
 </article>

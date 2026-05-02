@@ -6,6 +6,8 @@ a {
     display: flex;
     flex-direction: column;
     gap:0;
+    text-decoration: none;
+    color: white;
 }
 
 p {

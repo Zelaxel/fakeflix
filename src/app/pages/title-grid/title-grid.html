@@ -3,9 +3,9 @@
 <main class="header-page">
     <p id="title-grid-message-query">Showing: <strong id="title-grid-query">{{query}}</strong></p>
     <section id="title-grid">
-        @for(id of titlesId; track id) {
+        @for(item of titles(); track item.id) {
             <div class="title-container">
-                <app-title-item [id] = id></app-title-item>
+                <app-title-item [title] = item></app-title-item>
             </div>
         }
     </section>

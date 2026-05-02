@@ -3,11 +3,12 @@ export enum TitleTypes {
 }
 
 export interface Title {
-    id?: string,
-    name: string,
-    type: TitleTypes,
-    description: string,
-    imageUrl: string,
-    tags: string[],
-    recent: boolean
+    id?: string;
+    name: string;
+    type: TitleTypes;
+    description: string;
+    imageUrl: string;
+    videoUrl: string;
+    tags: string[];
+    recent: boolean;
 }
