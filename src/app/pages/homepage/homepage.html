@@ -2,17 +2,17 @@
 <main class="header-page">
     <section id="featured">
         <article class="container" id="featured-info">
-            <h1>{{featuredTitle}}</h1>
-            <p>{{featuredDescription}}</p>
+            <h1>{{featuredTitle()?.name}}</h1>
+            <p>{{featuredTitle()?.description}}</p>
 
             <div id="featured-buttons">
-                <a class="btn hoverable" id="watch-now" href="">Watch now</a>
-                <a class="btn hoverable" id="more-info" href="">More info</a>
+                <a class="btn hoverable" id="watch-now" routerLink="">Watch now</a>
+                <a class="btn hoverable" id="more-info" routerLink="/details" [state]="{data: featuredTitle()}"> More info</a>
             </div>
         </article>
-        <img id="featured-thumbnail" src="imgs/thumbnail_placeholder.jpg">
+        <img id="featured-thumbnail" src="imgs/{{featuredTitle()?.imageUrl}}">
     </section>
-    
+
     <section id="popular-section">
         <p id="label">Popular</p>
         <div class="container" id="title-list">
@@ -20,7 +20,11 @@
                 <i class="bi bi-arrow-left-circle-fill"></i>
             </button>
 
-            <section id="popular-items"></section>
+            <section id="popular-items">
+              @for (item of popularTitles(); track item.id) {
+                <app-title-item [title]="item"/>
+              }
+            </section>
 
             <button class="hoverable">
                 <i class="bi bi-arrow-right-circle-fill"></i>
