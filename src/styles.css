@@ -30,12 +30,7 @@ button {
     border-radius: 0.5rem;
     color: #2c302e;
     background-color: #ffffff;
-    transition: 0.3s ease;
 }
-
-.btn:active {
-    transform: scale(0.8);
-} 
 
 .hoverable {
     transition: 0.3s ease;
@@ -48,6 +43,22 @@ a.hoverable {
 
 .hoverable:hover {
     opacity: 70%;
+}
+
+.bouncy {
+  transition: transform 0.3s ease;
+}
+
+i.bouncy {
+  display: inline-block;
+}
+
+.bouncy:hover {
+  transform: scale(1.05);
+}
+
+.bouncy:active {
+  transform: scale(0.95);
 }
 
 form {

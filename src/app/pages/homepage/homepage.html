@@ -6,8 +6,8 @@
             <p>{{featuredTitle()?.description}}</p>
 
             <div id="featured-buttons">
-                <a class="btn hoverable" id="watch-now" routerLink="">Watch now</a>
-                <a class="btn hoverable" id="more-info" routerLink="/details" [state]="{data: featuredTitle()}"> More info</a>
+                <a class="btn hoverable bouncy" id="watch-now" routerLink="">Watch now</a>
+                <a class="btn hoverable bouncy" id="more-info" routerLink="/details" [state]="{data: featuredTitle()}"> More info</a>
             </div>
         </article>
         <img id="featured-thumbnail" src="{{featuredTitle()?.imageUrl}}">
@@ -16,7 +16,7 @@
     <section id="popular-section">
         <p id="label">Popular</p>
         <div class="container" id="title-list">
-            <button class="hoverable" (click)="scrollCarouselLeft()">
+            <button class="hoverable bouncy" id="left-button" (click)="scrollCarouselLeft()">
                 <i class="bi bi-arrow-left-circle-fill"></i>
             </button>
 
@@ -26,7 +26,7 @@
               }
             </section>
 
-            <button class="hoverable" (click)="scrollCarouselRight()">
+            <button class="hoverable bouncy" id="right-button" (click)="scrollCarouselRight()">
                 <i class="bi bi-arrow-right-circle-fill"></i>
             </button>
         </div>

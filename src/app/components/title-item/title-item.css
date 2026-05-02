@@ -36,3 +36,9 @@ a:hover p {
     cursor: pointer;
     opacity: 70%;
 }
+
+#item-text {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
