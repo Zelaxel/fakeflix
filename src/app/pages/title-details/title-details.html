@@ -4,17 +4,27 @@
     <aside>
         <section class="container" id="aside-head">
             <button class="hoverable" id="back"><i class="bi bi-arrow-left"></i></button>
-            <h1>{{title}}</h1>
+            <h1>{{title?.name}}</h1>
         </section>
-        <p>{{description}}</p>
+        <p>{{title?.description}}</p>
+
+      @if (title?.type === TitleTypes.Series) {
+        @for (item of getSeasons(); track item.index) {
+          <app-season
+            [season]="item"
+            [isOpenByDefault]="$first"
+            (episodeSelected)="setVideoDisplay(item, $event)" )/>
+        }
+      }
     </aside>
 
     <section class="container" id="video-display">
+      <div class="top-shadow"></div>
         <h2>{{videoTitle}}</h2>
         <video
-            autoplay muted loop 
-            src="/videos/{{video}}" 
-            poster="imgs/{{thumbnail}}">
+            autoplay muted loop
+            src="/videos/{{video}}"
+            poster="imgs/{{this.title?.imageUrl}}">
         </video>
             <a class="container hoverable" id="play-button"><i class="bi bi-play-fill"></i></a>
     </section>
