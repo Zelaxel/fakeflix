@@ -1,4 +1,4 @@
-import { Component, inject, signal } from '@angular/core';
+import { Component, ElementRef, inject, signal, ViewChild } from '@angular/core';
 import { Header } from '../../components/header/header';
 import { FirebaseService } from '../../services/firebase/firebase.service';
 import { Title } from '../../models/title';
@@ -15,6 +15,8 @@ export class Homepage {
   private fb = inject(FirebaseService);
   featuredTitle = signal<Title | null>(null);
   popularTitles = signal<Title[]>([]);
+
+  @ViewChild('carousel') carousel!: ElementRef<HTMLElement>;
 
   ngOnInit() {
     this.loadTitles();
@@ -36,5 +38,24 @@ export class Homepage {
       },
       error: (err) => console.error('Failed to load popular titles: ', err),
     });
+  }
+
+  private scrollCarousel(direction: number) {
+    const container = this.carousel.nativeElement;
+
+    const scrollAmount = container.offsetWidth * 0.8;
+
+    container.scrollBy({
+      left: direction * scrollAmount,
+      behavior: 'smooth'
+    });
+  }
+
+  protected scrollCarouselLeft() {
+    this.scrollCarousel(-1);
+  }
+
+  protected scrollCarouselRight() {
+    this.scrollCarousel(1);
   }
 }

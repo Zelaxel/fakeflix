@@ -16,17 +16,17 @@
     <section id="popular-section">
         <p id="label">Popular</p>
         <div class="container" id="title-list">
-            <button class="hoverable">
+            <button class="hoverable" (click)="scrollCarouselLeft()">
                 <i class="bi bi-arrow-left-circle-fill"></i>
             </button>
 
-            <section id="popular-items">
+            <section id="popular-items" #carousel>
               @for (item of popularTitles(); track item.id) {
                 <app-title-item [title]="item"/>
               }
             </section>
 
-            <button class="hoverable">
+            <button class="hoverable" (click)="scrollCarouselRight()">
                 <i class="bi bi-arrow-right-circle-fill"></i>
             </button>
         </div>
