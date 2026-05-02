@@ -1,19 +1,19 @@
 <nav class="container">
     <section  id="left-nav">
         <ul class="container" id="nav-bar">
-            <li class="hoverable"><a routerLink=""><img id="logo" src="logo.png"></a></li>
-            <li class="hoverable"><a routerLink="/titles">Series</a></li>
-            <li class="hoverable"><a routerLink="/titles">Movies</a></li>
-            <li class="hoverable"><a routerLink="/titles">Recently Added</a></li>
+            <li class="hoverable bouncy"><a routerLink=""><img id="logo" src="logo.png"></a></li>
+            <li class="hoverable bouncy"><a routerLink="/titles">Series</a></li>
+            <li class="hoverable bouncy"><a routerLink="/titles">Movies</a></li>
+            <li class="hoverable bouncy"><a routerLink="/titles">Recently Added</a></li>
         </ul>
     </section>
 
     <section class="container" id="right-nav">
         <article id="search-bar" #searchBar>
                 <input id="search-text" type="text" placeholder="Search..." #searchInput>
-                <i class="bi bi-search hoverable" id="search-icon" #searchIcon></i>
+                <i class="bi bi-search hoverable bouncy" id="search-icon" #searchIcon></i>
         </article>
-        <img (click)="showUserPanel()" id="profile-pic" src="user_picture.jpg">
+        <img (click)="showUserPanel()" class="hoverable bouncy" id="profile-pic" src="user_picture.jpg">
     </section>
     @if(userPanelVisible) {
         <app-user-panel (closePanel)="hideUserPanel()" id="user.panel"></app-user-panel>

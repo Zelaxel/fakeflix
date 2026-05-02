@@ -4,7 +4,8 @@ main {
 
 #label {
     font-size: 1.5rem;
-    padding-top:1rem;
+    padding-top: 1.5rem;
+    padding-bottom:0.5rem;
     padding-left: 3rem;
     margin: 0;
 }
@@ -20,6 +21,7 @@ button {
     position: relative;
     background-color: #2C302E;
     z-index: 2;
+    width: 100%;
 }
 
 #popular-section::before {
@@ -35,11 +37,29 @@ button {
 
 #popular-items {
     display: flex;
+    flex:1;
     flex-direction: row;
     justify-content: flex-start;
     gap: 1rem;
     overflow-x: hidden;
     padding-bottom: 1rem;
+    padding-left: 1rem;
+    margin-right: 1rem;
+}
+
+#title-list {
+  gap: 1rem;
+  width:100%;
+}
+
+#left-button {
+  position: relative;
+  left: 1rem;
+}
+
+#right-button {
+  position: relative;
+  right: 1rem;
 }
 
 #featured {
