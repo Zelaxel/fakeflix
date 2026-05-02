@@ -11,4 +11,6 @@ export interface Title {
     videoUrl: string;
     tags: string[];
     recent: boolean;
+    popular: boolean;
+    featured: boolean;
 }

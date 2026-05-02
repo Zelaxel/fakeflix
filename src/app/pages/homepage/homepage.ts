@@ -1,13 +1,61 @@
-import { Component } from '@angular/core';
+import { Component, ElementRef, inject, signal, ViewChild } from '@angular/core';
 import { Header } from '../../components/header/header';
+import { FirebaseService } from '../../services/firebase/firebase.service';
+import { Title } from '../../models/title';
+import { RouterLink } from '@angular/router';
+import { TitleItem } from '../../components/title-item/title-item';
 
 @Component({
   selector: 'app-homepage',
-  imports: [Header],
+  imports: [Header, RouterLink, TitleItem],
   templateUrl: './homepage.html',
   styleUrl: './homepage.css',
 })
 export class Homepage {
-  featuredTitle:string = "Albion Online";
-  featuredDescription:string = "Albion Online es un mmorpg no lineal, en el que escribes tu propia historia sin limitarte a seguir un camino prefijado. Explora un amplio mundo abierto con 5 biomas únicos, todo cuánto hagas tendrá su repercusión en el mundo, con la economía orientada al jugador de Albion, los jugadores crean prácticamente todo el equipo a partir de los recursos que consiguen, el equipo que llevas define quién eres, cambia de arma y armadura para pasar de caballero a mago, o juega como una mezcla de ambas clases. Aventúrate en el mundo abierto frente a los habitantes y las criaturas de Albion, inicia expediciones o adéntrate en mazmorras en las que encontrarás enemigos aún más difíciles, enfréntate a otros jugadores en encuentros en el mundo abierto, lucha por los territorios o por ciudades enteras en batallas tácticas, relájate en tu isla privada, donde podrás construir un hogar, cultivar cosechas y criar animales, únete a un gremio, todo es mejor cuando se trabaja en grupo. Adéntrate ya en el mundo de Albion y escribe tu propia historia.";
+  private fb = inject(FirebaseService);
+  featuredTitle = signal<Title | null>(null);
+  popularTitles = signal<Title[]>([]);
+
+  @ViewChild('carousel') carousel!: ElementRef<HTMLElement>;
+
+  ngOnInit() {
+    this.loadTitles();
+  }
+
+  private loadTitles() {
+    this.fb.getFeaturedTitle().subscribe({
+      next: (data) => {
+        console.log('Featured title loaded correctly');
+        this.featuredTitle.set(data);
+      },
+      error: (err) => console.error('Failed to load featured title: ', err),
+    });
+
+    this.fb.getPopularTitles().subscribe({
+      next: (data) => {
+        console.log('Featured title loaded correctly');
+        this.popularTitles.set(data);
+      },
+      error: (err) => console.error('Failed to load popular titles: ', err),
+    });
+  }
+
+  private scrollCarousel(direction: number) {
+    const container = this.carousel.nativeElement;
+
+    const scrollAmount = container.offsetWidth * 0.8;
+
+    container.scrollBy({
+      left: direction * scrollAmount,
+      behavior: 'smooth'
+    });
+  }
+
+  protected scrollCarouselLeft() {
+    this.scrollCarousel(-1);
+  }
+
+  protected scrollCarouselRight() {
+    this.scrollCarousel(1);
+  }
 }

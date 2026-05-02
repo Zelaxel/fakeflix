@@ -38,8 +38,8 @@ button {
     flex-direction: row;
     justify-content: flex-start;
     gap: 1rem;
-    height: 30vh;
     overflow-x: hidden;
+    padding-bottom: 1rem;
 }
 
 #featured {
