@@ -1,16 +1,41 @@
 import { Component } from '@angular/core';
 import { Header } from "../../components/header/header";
+import { Title, TitleTypes } from '../../models/title';
+import { Episode, SeasonInterface, Series } from '../../models/series';
+import { Season } from '../../components/season/season';
 
 @Component({
   selector: 'app-title-details',
-  imports: [Header],
+  imports: [Header, Season],
   templateUrl: './title-details.html',
   styleUrl: './title-details.css',
 })
 export class TitleDetails {
-title: string = "Título";
-description: string = "Albion Online es un mmorpg no lineal, en el que escribes tu propia historia sin limitarte a seguir un camino prefijado. Explora un amplio mundo abierto con 5 biomas únicos, todo cuánto hagas tendrá su repercusión en el mundo, con la economía orientada al jugador de Albion, los jugadores crean prácticamente todo el equipo a partir de los recursos que consiguen, el equipo que llevas define quién eres, cambia de arma y armadura para pasar de caballero a mago, o juega como una mezcla de ambas clases. Aventúrate en el mundo abierto frente a los habitantes y las criaturas de Albion, inicia expediciones o adéntrate en mazmorras en las que encontrarás enemigos aún más difíciles, enfréntate a otros jugadores en encuentros en el mundo abierto, lucha por los territorios o por ciudades enteras en batallas tácticas, relájate en tu isla privada, donde podrás construir un hogar, cultivar cosechas y criar animales, únete a un gremio, todo es mejor cuando se trabaja en grupo. Adéntrate ya en el mundo de Albion y escribe tu propia historia.";
-videoTitle: string = "Título";
-video: string = "";
-thumbnail: string = "thumbnail_placeholder.jpg";
+  protected readonly TitleTypes = TitleTypes;
+
+  title?: Title;
+  videoTitle: string = '';
+  thumbnail: string = '';
+  video: string = '';
+
+  ngOnInit() {
+    this.title = window.history.state.data;
+    console.log(this.title);
+
+    if (this.title && this.title.type == TitleTypes.Movies) {
+      this.video = this.title.videoUrl;
+    } else {
+      const firstSeason = (this.title as Series).seasons[0];
+      this.setVideoDisplay(firstSeason, firstSeason.episodes[0]);
+    }
+  }
+
+  getSeasons() {
+    return (this.title as Series).seasons;
+  }
+
+  protected setVideoDisplay(season: SeasonInterface, episode: Episode) {
+    this.videoTitle = `Season ${season.index} - Episode ${episode.idx}: ${episode.name}`;
+    this.video = episode.videoUrl;
+  }
 }

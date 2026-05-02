@@ -1,0 +1,19 @@
+<details #accordion (toggle)="null" [attr.open]="isOpenByDefault? '': null">
+  <summary>
+    <h3 class="hoverable">
+      @if (accordion.open) {
+        <i class="bi bi-caret-down"></i>
+      } @else {
+        <i class="bi bi-caret-right"></i>
+      }
+      Season {{season?.index}}
+    </h3>
+  </summary>
+  <div>
+    @for (item of season?.episodes; track item.idx) {
+      <article>
+        <button class="hoverable" (click)="selectEpisode(item)"> Episode {{item.idx}}</button>
+      </article>
+    }
+  </div>
+</details>

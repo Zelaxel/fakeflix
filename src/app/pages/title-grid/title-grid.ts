@@ -1,6 +1,8 @@
-import { Component } from '@angular/core';
+import { Component, inject, signal } from '@angular/core';
 import { TitleItem } from '../../components/title-item/title-item';
 import { Header } from '../../components/header/header';
+import { FirebaseService } from '../../services/firebase/firebase.service';
+import { Title } from '../../models/title';
 
 @Component({
   selector: 'app-title-grid',
@@ -9,8 +11,22 @@ import { Header } from '../../components/header/header';
   styleUrl: './title-grid.css',
 })
 export class TitleGrid {
+  private fb = inject(FirebaseService);
+
   query: string = 'query';
-  titlesId: number[] = [
-    1, 2, 3, 4, 5, 6
-  ];
+  titles = signal<Title[]>([]);
+
+  ngOnInit() {
+    this.loadTitles();
+  }
+
+  loadTitles() {
+    this.fb.getTitles().subscribe({
+      next: (data) => {
+        console.log('Titles loaded correctly');
+        this.titles.set(data);
+      },
+      error: (err) => console.error('Failed to load titles: ', err),
+    });
+  }
 }

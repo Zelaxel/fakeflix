@@ -1,33 +1,21 @@
 import { Routes } from '@angular/router';
+import { HomepageGuest } from './pages/homepage-guest/homepage-guest';
+import { Homepage } from './pages/homepage/homepage';
+import { TitleGrid } from './pages/title-grid/title-grid';
+import { TitleDetails } from './pages/title-details/title-details';
+import { VideoPlayer } from './pages/video-player/video-player';
+import { Login } from './pages/login/login';
+import { Signin } from './pages/signin/signin';
+
 
 
 export const routes: Routes = [
-  {
-    path: '',
-    loadComponent: () =>
-      import('./pages/homepage-guest/homepage-guest').then((m) => m.HomepageGuest),
-  },
-  {
-    path: 'home',
-    loadComponent: () => import('./pages/homepage/homepage').then((m) => m.Homepage),
-  },
-  {
-    path: 'titles',
-    loadComponent: () => import('./pages/title-grid/title-grid').then((m) => m.TitleGrid),
-  },
-  {
-    path: 'user-panel',
-    loadComponent: () => import('./components/user-panel/user-panel').then((m) => m.UserPanel),
-  },
-  { path: 'login', loadComponent: () => import('./pages/login/login').then((m) => m.Login) },
-  { path: 'signin', loadComponent: () => import('./pages/signin/signin').then((m) => m.Signin) },
-  {
-    path: 'video-player',
-    loadComponent: () => import('./pages/video-player/video-player').then((m) => m.VideoPlayer),
-  },
+    {path: '', component: HomepageGuest},
+    {path: 'home', component: Homepage},
+    {path: 'titles', component: TitleGrid},
+    {path: 'details', component: TitleDetails},
+    {path: 'video-player', component: VideoPlayer},
+    {path: 'login', component: Login,
+    {path: 'signin', component: Signin}
 
-  {
-    path: 'title-details',
-    loadComponent: () => import('./pages/title-details/title-details').then((m) => m.TitleDetails),
-  },
 ];
