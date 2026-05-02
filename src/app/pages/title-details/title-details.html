@@ -13,7 +13,7 @@
           <app-season
             [season]="item"
             [isOpenByDefault]="$first"
-            (episodeSelected)="setVideoDisplay(item, $event)" )/>
+            (episodeSelected)="setVideoDisplay(item, $event)"/>
         }
       }
     </aside>
@@ -24,7 +24,7 @@
         <video
             autoplay muted loop
             src="/videos/{{video}}"
-            poster="imgs/{{this.title?.imageUrl}}">
+            poster="{{this.title?.imageUrl}}">
         </video>
             <a class="container hoverable" id="play-button"><i class="bi bi-play-fill"></i></a>
     </section>
