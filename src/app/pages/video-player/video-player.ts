@@ -2,6 +2,7 @@ import { Component, ElementRef, ViewChild, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { Router, ActivatedRoute } from '@angular/router';
+import { FirebaseService } from '../services/firebase/firebase.service';
 
 @Component({
   selector: 'app-video-player',
@@ -39,45 +40,28 @@ export class VideoPlayer implements OnInit {
   constructor(
     private router: Router,
     private route: ActivatedRoute
+    private firebaseService: FirebaseService,
   ) {}
 
   /* ========================
      🚀 INIT: CARGA POR ID
   ======================== */
-  ngOnInit() {
-    const id = this.route.snapshot.paramMap.get('id');
+ngOnInit() {
+  const id = this.route.snapshot.paramMap.get('id');
 
-    if (id) {
-      const data = this.loadVideoById(Number(id));
+  if (id) {
+    this.firebaseService.getTitles().subscribe(titles => {
+
+      const data = titles.find(t => t.id === id);
 
       if (data) {
-        this.video = data.video;
-        this.title = data.title;
+        this.video = data.videoUrl;
+        this.title = data.name;
       }
-    }
-  }
 
-  /* ========================
-     🧪 MOCK (luego será DB/API)
-  ======================== */
-  loadVideoById(id: number) {
-    const fakeDB: any = {
-      1: {
-        video: 'https://media.w3.org/2010/05/sintel/trailer.mp4',
-        title: 'Sintel'
-      },
-      2: {
-        video: 'https://media.w3.org/2010/05/bunny/movie.mp4',
-        title: 'Bunny'
-      },
-      3: {
-        video: 'https://media.w3.org/2010/05/video/movie.mp4',
-        title: 'Video random'
-      }
-    };
-
-    return fakeDB[id];
+    });
   }
+}
 
   /* ========================
      ▶️ PLAY / PAUSE

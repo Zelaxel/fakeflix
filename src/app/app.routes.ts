@@ -15,7 +15,6 @@ export const routes: Routes = [
     {path: 'titles', component: TitleGrid},
     {path: 'details', component: TitleDetails},
     {path: 'video-player', component: VideoPlayer},
-    {path: 'login', component: Login,
+    {path: 'login', component: Login},
     {path: 'signin', component: Signin}
-
 ];
