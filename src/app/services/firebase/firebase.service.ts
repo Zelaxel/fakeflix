@@ -41,7 +41,7 @@ export class FirebaseService {
     const titlesCollection = collection(this.firestore, 'titles');
     const constraints: any[] = [];
     // Optional querys.
-    if(name !== null && name !== undefined) constraints.push(and(where('name', '>=', name), where('name', '<=', name + '\uf8ff')));
+    if(name !== null && name !== undefined) constraints.push(or(where('tags', 'array-contains', name), and(where('name', '>=', name), where('name', '<=', name + '\uf8ff'))));
     if(type !== null && type !== undefined) constraints.push(where('type', '==', Number(type)));
     if(recent !== null && recent !== undefined) constraints.push(where('recent', '==', Boolean(recent)));
     // Unify query.

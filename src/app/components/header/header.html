@@ -10,7 +10,7 @@
 
     <section class="container" id="right-nav">
         <article id="search-bar" #searchBar>
-            <input id="search-text" type="text" placeholder="Search..." #searchInput>
+            <input id="search-text" type="text" placeholder="Search..." #searchInput (keydown.enter)="search(searchInput.value)">
             <i class="bi bi-search hoverable bouncy" id="search-icon" #searchIcon (click)="search(searchInput.value)"></i>
         </article>
         <img (click)="showUserPanel()" class="hoverable bouncy" id="profile-pic" src="user_picture.jpg">
