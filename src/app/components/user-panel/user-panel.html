@@ -1,6 +1,6 @@
 <main id="user-panel">
     <button (click)="hideUserPanel()" class="close btn hoverable bouncy"><i class="bi bi-x"></i></button>
-    <label class="user-name-label">User Name</label>
+    <label class="user-name-label">{{name}}</label>
     <img class="profile-picture" src="user_picture.jpg" alt="Error">
     <button class="logout-button btn hoverable bouncy" (click)="logOut()">Log Out</button>
     <button class="edit-button btn hoverable bouncy" routerLink="/profile-editor">Edit profile</button>

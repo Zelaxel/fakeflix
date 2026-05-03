@@ -1,9 +1,12 @@
 import { Component, Input } from '@angular/core';
-import { ReactiveFormsModule, FormControl, FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { ReactiveFormsModule, FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router, RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { AuthService } from '../../services/auth.service';
+import { FirebaseService } from '../../services/firebase/firebase.service';
 import { OnInit } from '@angular/core';
+import { User } from '../../models/user';
+import { firstValueFrom } from 'rxjs';
 
 @Component({
   selector: 'app-login',
@@ -33,6 +36,7 @@ export class Login implements OnInit {
     private fb: FormBuilder,
     private authService: AuthService,
     private router: Router,
+    private firebase: FirebaseService
   ) {
     this.form = this.fb.group({
       email: [
@@ -78,10 +82,14 @@ export class Login implements OnInit {
     this.passwordInvalid = false;
 
     try {
-      await this.authService.login(email, password);
+      const userId: string = (await this.authService.login(email, password)).user.uid;
+      const user: User = await firstValueFrom(this.firebase.getUserData(userId));
 
       localStorage.setItem('isLoggedIn', 'true');
+      localStorage.setItem('name', user.name);
       localStorage.setItem('email', email);
+      localStorage.setItem('uid', userId);
+
 
       this.router.navigate(['/home']);
     } catch (error) {
@@ -89,6 +97,3 @@ export class Login implements OnInit {
     }
   }
 }
-
-
-

@@ -11,7 +11,8 @@ import {
 } from '@angular/fire/firestore';
 import { map, Observable } from 'rxjs';
 import { Title } from '../../models/title';
-import { doc, docData } from '@angular/fire/firestore';
+import { User } from '../../models/user';
+import { doc, docData, updateDoc } from '@angular/fire/firestore';
 
 @Injectable({
   providedIn: 'root',
@@ -50,4 +51,14 @@ export class FirebaseService {
     return collectionData(q, { idField: 'id' }) as Observable<Title[]>;
   }
 
+  getUserData(uid: string) {
+    const userDoc = doc(this.firestore, 'users', uid);
+    return docData(userDoc) as Observable<User>;
+  }
+
+  async updateUserData(uid: string, name: string) {
+    const userDoc = doc(this.firestore, 'users', uid);
+    return updateDoc(userDoc, {name: name});
+  }
+  
 }

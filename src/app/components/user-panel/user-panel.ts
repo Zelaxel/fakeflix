@@ -12,6 +12,7 @@ export class UserPanel {
   @Output() closePanel = new EventEmitter<void>()
 
   private router = inject(Router);
+  name: string | null = localStorage.getItem('name');
 
   hideUserPanel(): void {
     this.closePanel.emit();
