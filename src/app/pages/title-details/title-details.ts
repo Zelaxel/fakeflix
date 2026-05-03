@@ -4,6 +4,7 @@ import { Title, TitleTypes } from '../../models/title';
 import { Episode, SeasonInterface, Series } from '../../models/series';
 import { Season } from '../../components/season/season';
 import { Router } from '@angular/router';
+import { Location } from '@angular/common';
 
 
 @Component({
@@ -20,7 +21,7 @@ export class TitleDetails {
   thumbnail: string = '';
   video: string = '';
 
-  constructor(private router: Router) {}
+  constructor(private router: Router, private location: Location) {}
 
   ngOnInit() {
     this.title = window.history.state.data;
@@ -53,5 +54,9 @@ export class TitleDetails {
         },
       },
     });
+  }
+
+  goBack() {
+    this.location.back();
   }
 }
