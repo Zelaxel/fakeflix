@@ -1,13 +1,13 @@
 import { Component } from '@angular/core';
 import { ReactiveFormsModule, FormControl, FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { Router, RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
+import { AuthService } from '../../services/auth.service';
 
 @Component({
   selector: 'app-login',
   standalone: true,
-  imports: [CommonModule, ReactiveFormsModule, RouterModule, HttpClientModule],
+  imports: [CommonModule, ReactiveFormsModule, RouterModule],
   templateUrl: './login.html',
   styleUrl: './login.css',
 })
@@ -19,7 +19,7 @@ export class Login {
 
   constructor(
     private fb: FormBuilder,
-    private http: HttpClient,
+    private authService: AuthService,
     private router: Router,
   ) {
     this.form = this.fb.group({
@@ -43,13 +43,13 @@ export class Login {
     this.router.navigate(['/signin'], { queryParams: { email: email } });
   }
 
-  login() {
+  async login() {
     this.submitted = true;
 
     const { email, password } = this.form.value;
+
     const emailControl = this.form.get('email');
     const passwordControl = this.form.get('password');
-
 
     if (emailControl?.invalid) {
       this.emailInvalid = true;
@@ -65,27 +65,16 @@ export class Login {
 
     this.passwordInvalid = false;
 
-
-
-    this.http.get<any>('/data/users.json').subscribe((data) => {
-      const user = data.users.find((u: any) => u.email === email);
-
-      if (!user) {
-        alert('Usuario no encontrado');
-        return;
-      }
-
-      if (user.password !== password) {
-        alert('Contraseña incorrecta');
-        return;
-      }
+    try {
+      await this.authService.login(email, password);
 
       localStorage.setItem('isLoggedIn', 'true');
       localStorage.setItem('email', email);
 
-      window.location.href = './index.html';
-    });
-
+      this.router.navigate(['/']);
+    } catch (error) {
+      alert('Email o contraseña incorrectos');
+    }
   }
 }
 
