@@ -18,6 +18,7 @@ export class UserPanel {
   }
 
   logOut() {
-    this.router.navigate(['/login'])
+    localStorage.clear();
+    this.router.navigate(['/'])
   }
 }
