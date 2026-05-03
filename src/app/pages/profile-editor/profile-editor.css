@@ -1,0 +1,46 @@
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 3rem;
+    gap: 2rem;
+}
+
+h1 {
+    font-weight: normal;
+}
+
+form {
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    width: 30rem;
+}
+
+img {
+    height: 15rem;
+    width: 15rem;
+    border-radius: 100%;
+}
+
+input {
+    width: 20rem;
+    border: none;
+    border-radius: 1rem;
+}
+
+button {
+    width: 10rem;
+    color: white;
+    font-size: large;
+    height: 3rem;
+    width: 13rem;
+}
+
+.cancel {
+    background-color: #D42222;
+}
+
+.confirm {
+    background-color: #009857;
+}

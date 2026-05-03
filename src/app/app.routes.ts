@@ -6,6 +6,7 @@ import { TitleDetails } from './pages/title-details/title-details';
 import { VideoPlayer } from './pages/video-player/video-player';
 import { Login } from './pages/login/login';
 import { Signin } from './pages/signin/signin';
+import { ProfileEditor } from './pages/profile-editor/profile-editor';
 
 
 
@@ -16,5 +17,6 @@ export const routes: Routes = [
     {path: 'details', component: TitleDetails},
     {path: 'video-player', component: VideoPlayer},
     {path: 'login', component: Login},
-    {path: 'signin', component: Signin}
+    {path: 'signin', component: Signin},
+    {path: 'profile-editor', component: ProfileEditor}
 ];
