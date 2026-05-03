@@ -46,55 +46,25 @@ src/app/
 A continuación, se detalla la funcionalidad de cada componente y página.
 
 ### Componentes
-
-#### Header
-Encabezado de las páginas y navegabilidad entre las mismas.
-Además, contiene una barra de búsqueda y el panel de usuario.
-
-#### Season
-Representa una temporada de una serie.
-Contiene una lista con los episodios.
-
-#### Title Item
-Representa un título, tanto en la lista general de títulos como en cualquier otra que se pueda presentar. 
-
-#### User Panel
-Panel de usuario.
-Muestra los datos del usuario y permite su edición.
-Contiene el botón de cerrar sesión.
+|Componente | Descripción|
+|:-:|:--|
+|**Header** | Encabezado de las páginas y navegabilidad entre las mismas. Además, contiene una barra de búsqueda y el panel de usuario.|
+|**Season** | Representa una temporada de una serie. Contiene una lista con los episodios.|
+|**Title Item** | Representa un título, tanto en la lista general de títulos como en cualquier otra que se pueda presentar.| 
+|**User Panel** | Panel de usuario. Muestra los datos del usuario y permite su edición. Contiene el botón de cerrar sesión.|
 
 ### Páginas
 
-#### Homepage Guest
-Página de inicio para usuarios sin autenticar.
-Permite el acceso al inicio de sesión y a la creación de cuentas. 
-
-#### Homepage
-Página de inicio.
-Muestra una serie de títulosrecomendados para el usuario.
-
-#### Log In
-Página de inicio de sesión.
-
-#### Profile Editor
-Permite editar el usuario.
-
-#### Sign In
-Página de creación de usuarios.
-
-#### Title Details
-Vista detallada de un título.
-Muestra el nombre, la descripción y la portada de un título,
-así como una lista de temporadas con sus episodios en el caso de las series.   
-
-#### Title Grid
-Lista de títulos.
-Permite el filtrado por tipo de título, por títulos recientes y por nombre y etiquetas del título
-gracias a las funcionalidades del **header**.
-
-#### Video Player
-Reproductor de vídeo.
-Tiene las funcionalidades básicas de los reproductores de vídeo.
+|Página | Descripción|
+|:-:|:--|
+|**Homepage Guest** | Página de inicio para usuarios sin autenticar. Permite el acceso al inicio de sesión y a la creación de cuentas.|
+|**Homepage** | Página de inicio. Muestra una serie de títulosrecomendados para el usuario.|
+|**Log In** | Página de inicio de sesión.|
+|**Profile Editor** | Permite editar el usuario.|
+|**Sign In** | Página de creación de usuarios.|
+|**Title Details** | Vista detallada de un título. Muestra el nombre, la descripción y la portada de un título, así como una lista de temporadas con sus episodios en el caso de las series.|
+|**Title Grid** | Lista de títulos. Permite el filtrado por tipo de título, por títulos recientes y por nombre y etiquetas del título gracias a las funcionalidades del **header**.|
+|**Video Player** | Reproductor de vídeo. Tiene las funcionalidades básicas de los reproductores de vídeo.|
 
 
 ## Estructura de los datos
