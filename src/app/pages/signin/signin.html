@@ -1,54 +1,54 @@
-                                                                             <body class="form-body">
-
-<div class="form-container">
-  <h1 class="form-h1">Sign in</h1>
-  <form (ngSubmit)="onSubmit()" #form="ngForm">
-
-    <input class="form-input form-field"
-           type="text"
-           placeholder="User name"
-           name="user-name"
-           [(ngModel)]="formData.username"
-           required>
-
-    <input class="form-input form-field"
-           type="email"
-           placeholder="Mail address"
-           name="email"
-           id="signinEmail"
-           [(ngModel)]="formData.email"
-           #emailCtrl="ngModel"
-           required
-           email>
-
-
-
-    <input class="form-input form-field"
-           type="password"
-           placeholder="Password"
-           name="password"
-           [(ngModel)]="formData.password"
-           required>
-
-    <input class="form-input form-field"
-           type="password"
-           placeholder="Repeat password"
-           name="repeated-password"
-           [(ngModel)]="formData.repeatPassword"
-           required>
-
-    <input class="form-submit form-field"
-           type="submit"
-           value="Sign in">
-
-  </form>
-
-  <p class="form-message">
-    Have already an account?
-    <a class="form-link"
-       [routerLink]="['/login']"
-       [queryParams]="{ email: formData.email }">
-      Log in!
-    </a>
-  </p>
-</div>
+<main class="form-body">
+       <div class="form-container">
+              <h1 class="form-h1">Sign in</h1>
+              <form (ngSubmit)="onSubmit()" #form="ngForm">
+                     
+                     <input class="form-input form-field"
+                     type="text"
+                     placeholder="User name"
+                     name="user-name"
+                     [(ngModel)]="formData.username"
+                     required>
+                     
+                     <input class="form-input form-field"
+                     type="email"
+                     placeholder="Mail address"
+                     name="email"
+                     id="signinEmail"
+                     [(ngModel)]="formData.email"
+                     #emailCtrl="ngModel"
+                     required
+                     email>
+                     
+                     
+                     
+                     <input class="form-input form-field"
+                     type="password"
+                     placeholder="Password"
+                     name="password"
+                     [(ngModel)]="formData.password"
+                     required>
+                     
+                     <input class="form-input form-field"
+                     type="password"
+                     placeholder="Repeat password"
+                     name="repeated-password"
+                     [(ngModel)]="formData.repeatPassword"
+                     required>
+                     
+                     <input class="form-submit form-field"
+                     type="submit"
+                     value="Sign in">
+                     
+              </form>
+              
+              <p class="form-message">
+                     Have already an account?
+                     <a class="form-link"
+                            [routerLink]="['/login']"
+                            [queryParams]="{ email: formData.email }">
+                            Log in!
+                     </a>
+              </p>
+       </div>
+</main>

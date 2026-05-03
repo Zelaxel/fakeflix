@@ -1,7 +1,8 @@
-body {
+main {
   background-color: #2C302E;
   color: #ffffff;
   font-family: 'Inter', sans-serif;
+  padding: 3rem;
 }
 
 
