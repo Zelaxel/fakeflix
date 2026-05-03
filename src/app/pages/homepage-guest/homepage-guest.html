@@ -1,7 +1,7 @@
 <main class="container">
     <img id="logo" src="logo.png">
     <h1> Netflix, but fake</h1>
-    <form>
+    <form (submit)="goToLogin(emailInput.value)">
         <input
             class="form-field form-input"
             id="email-field"
@@ -10,10 +10,11 @@
             placeholder="Email Address"
             aria-label="Email Address"
             required
+            #emailInput
         >
 
         <input
-            class="form-field form-submit"
+            class="form-field form-submit hoverable"
             id="submit"
             type="submit"
             value="Get Started"

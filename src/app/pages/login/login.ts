@@ -1,8 +1,9 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { ReactiveFormsModule, FormControl, FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router, RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { AuthService } from '../../services/auth.service';
+import { OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-login',
@@ -11,11 +12,22 @@ import { AuthService } from '../../services/auth.service';
   templateUrl: './login.html',
   styleUrl: './login.css',
 })
-export class Login {
+export class Login implements OnInit {
   submitted = false;
   emailInvalid = false;
   passwordInvalid = false;
   form: FormGroup;
+
+  @Input() email?: string = '';
+
+  ngOnInit(): void {
+    console.log(this.email)
+    if(this.email) {
+      this.form.patchValue({
+        email: this.email
+      });
+    }
+  }
 
   constructor(
     private fb: FormBuilder,
