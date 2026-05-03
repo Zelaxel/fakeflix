@@ -1,9 +1,12 @@
 main {
-  main {
   background-color: #2C302E;
   color: #ffffff;
   font-family: 'Inter', sans-serif;
 }
+
+.form-h1 {
+  font-size: 50px;
+  font-weight: lighter;
 }
 
 :host {
