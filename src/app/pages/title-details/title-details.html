@@ -26,6 +26,6 @@
             src="/videos/{{video}}"
             poster="{{this.title?.imageUrl}}">
         </video>
-            <a class="container hoverable" id="play-button"><i class="bi bi-play-fill"></i></a>
+            <a class="container hoverable" id="play-button" (click)="openPlayer()" ><i class="bi bi-play-fill"></i></a>
     </section>
 </main>

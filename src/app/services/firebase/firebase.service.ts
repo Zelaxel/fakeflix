@@ -11,6 +11,7 @@ import {
 } from '@angular/fire/firestore';
 import { map, Observable } from 'rxjs';
 import { Title } from '../../models/title';
+import { doc, docData } from '@angular/fire/firestore';
 
 @Injectable({
   providedIn: 'root',
@@ -48,4 +49,5 @@ export class FirebaseService {
     const q = query(titlesCollection, and(...constraints));
     return collectionData(q, { idField: 'id' }) as Observable<Title[]>;
   }
+
 }

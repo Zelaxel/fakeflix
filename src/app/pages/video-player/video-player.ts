@@ -4,6 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { Router, ActivatedRoute } from '@angular/router';
 import { FirebaseService } from '../../services/firebase/firebase.service';
 
+
 @Component({
   selector: 'app-video-player',
   standalone: true,
@@ -13,15 +14,11 @@ import { FirebaseService } from '../../services/firebase/firebase.service';
 })
 export class VideoPlayer implements OnInit {
 
-  /* ========================
-     🎬 REFERENCIAS DOM
-  ======================== */
+
   @ViewChild('videoPlayer') videoRef!: ElementRef<HTMLVideoElement>;
   @ViewChild('player') playerRef!: ElementRef;
 
-  /* ========================
-     📦 ESTADO
-  ======================== */
+
   video: string = '';
   title: string = '[Title]';
 
@@ -43,29 +40,17 @@ export class VideoPlayer implements OnInit {
     private firebaseService: FirebaseService,
   ) {}
 
-  /* ========================
-     🚀 INIT: CARGA POR ID
-  ======================== */
-ngOnInit() {
-  const id = this.route.snapshot.paramMap.get('id');
 
-  if (id) {
-    this.firebaseService.getTitles().subscribe(titles => {
-
-      const data = titles.find(t => t.id === id);
-
-      if (data) {
-        this.video = data.videoUrl;
-        this.title = data.name;
-      }
-
-    });
+  ngOnInit() {
+    const state = history.state?.data;
+    console.log('STATE RECIBIDO:', state);
+    if (state?.videoUrl) {
+      this.title = state.name;
+      this.video = '/videos/' + state.videoUrl;
+    }
   }
-}
 
-  /* ========================
-     ▶️ PLAY / PAUSE
-  ======================== */
+
   togglePlay(videoEl?: HTMLVideoElement) {
     const video = videoEl || this.videoRef.nativeElement;
 
@@ -78,9 +63,7 @@ ngOnInit() {
     }
   }
 
-  /* ========================
-     ⏪⏩ CONTROLES
-  ======================== */
+
   rewind() {
     this.videoRef.nativeElement.currentTime -= 10;
   }
@@ -89,9 +72,7 @@ ngOnInit() {
     this.videoRef.nativeElement.currentTime += 10;
   }
 
-  /* ========================
-     🔊 VOLUMEN
-  ======================== */
+
   changeVolume(videoEl?: HTMLVideoElement) {
     const video = videoEl || this.videoRef.nativeElement;
     video.volume = this.volume;
@@ -101,9 +82,7 @@ ngOnInit() {
     this.showAudioMenu = !this.showAudioMenu;
   }
 
-  /* ========================
-     💬 SUBTÍTULOS
-  ======================== */
+
   toggleSubs() {
     this.showSubsMenu = !this.showSubsMenu;
   }
@@ -118,9 +97,7 @@ ngOnInit() {
     this.showSubsMenu = false;
   }
 
-  /* ========================
-     📊 PROGRESO
-  ======================== */
+
   updateProgress() {
     const video = this.videoRef.nativeElement;
 
@@ -140,16 +117,20 @@ ngOnInit() {
   }
 
   formatTime(time: number): string {
-    const h = Math.floor(time / 3600).toString().padStart(2, '0');
-    const m = Math.floor((time % 3600) / 60).toString().padStart(2, '0');
-    const s = Math.floor(time % 60).toString().padStart(2, '0');
+    const h = Math.floor(time / 3600)
+      .toString()
+      .padStart(2, '0');
+    const m = Math.floor((time % 3600) / 60)
+      .toString()
+      .padStart(2, '0');
+    const s = Math.floor(time % 60)
+      .toString()
+      .padStart(2, '0');
 
     return `${h}:${m}:${s}`;
   }
 
-  /* ========================
-     🖥️ FULLSCREEN
-  ======================== */
+
   toggleFullscreen() {
     const player = this.playerRef.nativeElement;
 
@@ -162,9 +143,7 @@ ngOnInit() {
     }
   }
 
-  /* ========================
-     ❌ CERRAR
-  ======================== */
+
   closePlayer() {
     window.history.back();
   }

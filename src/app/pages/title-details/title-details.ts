@@ -3,6 +3,8 @@ import { Header } from "../../components/header/header";
 import { Title, TitleTypes } from '../../models/title';
 import { Episode, SeasonInterface, Series } from '../../models/series';
 import { Season } from '../../components/season/season';
+import { Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-title-details',
@@ -18,12 +20,15 @@ export class TitleDetails {
   thumbnail: string = '';
   video: string = '';
 
+  constructor(private router: Router) {}
+
   ngOnInit() {
     this.title = window.history.state.data;
     console.log(this.title);
 
     if (this.title && this.title.type == TitleTypes.Movies) {
       this.video = this.title.videoUrl;
+      this.videoTitle = this.title.name;
     } else {
       const firstSeason = (this.title as Series).seasons[0];
       this.setVideoDisplay(firstSeason, firstSeason.episodes[0]);
@@ -37,5 +42,16 @@ export class TitleDetails {
   protected setVideoDisplay(season: SeasonInterface, episode: Episode) {
     this.videoTitle = `Season ${season.index} - Episode ${episode.idx}: ${episode.name}`;
     this.video = episode.videoUrl;
+  }
+
+  openPlayer() {
+    this.router.navigate(['/video-player'], {
+      state: {
+        data: {
+          name: this.videoTitle,
+          videoUrl: this.video,
+        },
+      },
+    });
   }
 }
